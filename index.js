@@ -13,5 +13,8 @@ mongoose.connect('mongodb://localhost/baza_inzynierka', {
 });
 
 app.use('/',routes);
+app.use('/scripts', express.static(__dirname + '/scripts/'));
+app.use('/views', express.static(__dirname + '/views/'));
+app.use('/styles', express.static(__dirname + '/styles/'));
 
 app.listen(3000);

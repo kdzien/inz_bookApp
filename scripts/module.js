@@ -1,0 +1,1 @@
+angular.module('betApp', ['ui.router']);

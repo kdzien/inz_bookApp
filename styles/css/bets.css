@@ -1,0 +1,44 @@
+.cat-img {
+  width: 20px;
+  position: absolute;
+  top: 10;
+  right: 10;
+}
+
+.small-bet {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-right: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.small-bet:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.panel {
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background-color: initial !important;
+}
+
+.panel-default {
+  border: none;
+  border-radius: 0;
+}
+.panel-default .panel-heading {
+  border: none;
+  color: white !important;
+  background-color: black;
+  border-radius: 0;
+}
+.panel-default .panel-body {
+  background-color: rgba(0, 0, 0, 0.5);
+  word-wrap: break-word;
+}
+.panel-default .panel-body #info {
+  text-align: center;
+  margin-bottom: 30px;
+}

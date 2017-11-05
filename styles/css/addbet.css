@@ -1,0 +1,79 @@
+#choose-panel {
+  text-align: center;
+}
+#choose-panel img {
+  margin-right: 20px;
+  width: 40px;
+}
+#choose-panel img:hover {
+  cursor: pointer;
+}
+#choose-panel img:last-child {
+  margin-right: 0px;
+}
+
+#form-panel {
+  color: white !important;
+}
+#form-panel form {
+  margin: 0 auto;
+  width: 60%;
+}
+#form-panel form select, #form-panel form input, #form-panel form textarea, #form-panel form button {
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#form-panel form select option, #form-panel form input option, #form-panel form textarea option, #form-panel form button option {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#form-panel form select:focus, #form-panel form input:focus, #form-panel form textarea:focus, #form-panel form button:focus {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(38, 245, 73, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(38, 245, 73, 0.6);
+}
+#form-panel form button:hover {
+  background-color: black;
+}
+#form-panel form textarea {
+  height: 100px;
+}
+#form-panel form > * {
+  margin-bottom: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  color: white;
+}
+
+.basketball {
+  background-color: #c37e00;
+  border-radius: 50%;
+}
+
+.soccer {
+  background-color: white;
+  border-radius: 50%;
+}
+
+.tenis {
+  background-color: #e3f12e;
+  border-radius: 50%;
+}
+
+.volleyball {
+  background-color: white;
+  border-radius: 50%;
+}
+
+.checkboxed {
+  text-align: center;
+}
+.checkboxed input, .checkboxed label {
+  width: auto !important;
+  margin: 5px;
+}

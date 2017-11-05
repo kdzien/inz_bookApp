@@ -1,2 +1,28 @@
 
-	descbetsxczcx
+<!-- 	<img class="cat-img {{bet.category}}" ng-src="./images/{{bet.category}}.png" />
+	<div class="col-md-12" id="user-info">
+		<div>{{bet.user}}</div>
+		<div>{{bet.data | date:'HH:ss, dd.MM.yyyy' }}</div>
+	</div>
+	<div class="col-md-12" id="bet-info">
+		<div>Wydarzenie: {{bet.nazwa}}</div>
+		<div>Typ: {{bet.typ}}</div>
+		<div>Kurs: {{bet.kurs}}</div>
+		<div>Analiza: {{bet.analiza}}</div>
+	</div> -->
+</div>
+
+<div class="panel panel-default" ng-repeat="bet in bets">
+  <div class="panel-heading"><b>{{bet.nazwa}}</b>
+  <img width="20px" style="float:right" class="{{bet.category}}" ng-src="./images/{{bet.category}}.png" />
+  </div>
+  <div class="panel-body">
+	  <div id="info">
+	  	<div class="col-md-4">Typ:<b>{{bet.typ}}</b></div>
+	  	<div class="col-md-4">Kurs:<b>{{bet.kurs}}</b></div>
+	  	<div class="col-md-4">Data:<b>{{bet.data | date:'HH:ss, dd.MM.yyyy'}}</b></div>
+	  </div>  
+	  <div><b>Analiza: </b>{{bet.analiza}}</div>
+	  <div style="text-align:right">Użytkownik: {{bet.user}}</div>
+  </div>
+</div>

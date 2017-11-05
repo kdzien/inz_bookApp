@@ -1,0 +1,18 @@
+//domieszki
+@mixin remove-padding(){
+	padding:0;
+}
+@mixin custom-border($size,$color,$type){
+	@if $type=="topbottom"{
+	border-top:solid $size $color;
+	border-bottom:solid $size $color;
+	}
+	@if $type=="top"{
+	border-top:solid $size $color;
+	}
+}
+
+@mixin sport-icon($color){
+	background-color:$color;
+	border-radius:50%;
+}

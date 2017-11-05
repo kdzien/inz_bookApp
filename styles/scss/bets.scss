@@ -1,0 +1,45 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.cat-img{
+	width:20px;
+	position:absolute;
+	top:10;
+	right:10;
+}
+.small-bet{
+	padding:$elements-padding;
+	background-color:$transparent-black;
+	margin-right:5px;
+	border-radius:10px;
+	margin-bottom:10px;
+	&:hover{
+		opacity:0.6;
+		cursor:pointer;
+	}
+}
+//override
+.panel{
+	width:70%;
+	margin:0 auto;
+	margin-bottom:10px;
+	background-color:initial !important;
+}
+.panel-default{
+	border:none;
+	border-radius:0;
+	.panel-heading{
+		border:none;
+		color:white !important;	
+		background-color:black;
+		border-radius:0;
+	}
+	.panel-body{
+		background-color:$transparent-black;
+		word-wrap:break-word;
+		#info{
+			text-align:center;
+			margin-bottom:30px;
+		}
+	}
+}

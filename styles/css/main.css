@@ -1,0 +1,109 @@
+body {
+  background: #003973;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#E5E5BE), to(#003973));
+  background: linear-gradient(to bottom, #E5E5BE, #003973);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover, a:visited, a:focus {
+  text-decoration: none;
+  color: white;
+}
+
+#menu-left {
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: bold;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  display: inline-block;
+  height: 100%;
+  width: 210px;
+}
+#menu-left ul {
+  padding: 0;
+  padding: 10px;
+}
+#menu-left ul li {
+  padding-top: 10px;
+  list-style-type: none;
+  font-size: 16px;
+  opacity: 0.5;
+}
+#menu-left ul li:last-child {
+  padding-bottom: 10px;
+}
+#menu-left ul li:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+#menu-left ul:first-child {
+  margin-bottom: 0;
+}
+#menu-left #user {
+  border-top: solid 1px #1D2B64;
+  width: 170px;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  font-size: 18px;
+}
+#menu-left #user span i {
+  font-size: 18px;
+  padding-right: 20px;
+}
+#menu-left #user span:hover {
+  cursor: pointer;
+}
+
+#content-right {
+  overflow: auto;
+  padding-left: 210px;
+  height: 100%;
+}
+#content-right #main-content {
+  padding: 20px;
+}
+
+.currentPage {
+  opacity: 1 !important;
+}
+
+.fixed-margin {
+  float: none;
+  margin: 0 auto;
+}
+
+#cupon-list {
+  color: white;
+  background-color: black;
+  position: fixed;
+  width: 0px;
+  height: 100%;
+  right: 0;
+  top: 0;
+}
+#cupon-list #hide-button {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: -25px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+}
+#cupon-list #hide-button i {
+  font-size: 25px;
+  padding: 14px 10px 14px 15px;
+}
+#cupon-list #hide-button:hover {
+  cursor: pointer;
+}

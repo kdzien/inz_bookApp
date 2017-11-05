@@ -1,3 +1,29 @@
-{{dupa}}
-<div ui-view>
+<div id="menu-left">
+	<ul>
+		<li ng-class="{currentPage: isActive('/main/descriptionbets')}"><a ui-sref="main.descBets" >Typy z analizą</a></li>
+		<li ng-class="{currentPage: isActive('/main/lightbets')}"><a ui-sref="main.lightBets" >Luźne typy</a></li>
+	</ul>
+	<ul>
+		<li ng-class="{currentPage: isActive('/main/addbet')}"><a ui-sref="main.addBet" >Dodaj typ</a></li>
+	</ul>
+	<div id="user">
+		<span><i class="fa fa-user-o" aria-hidden="true"></i>dzieniu</span>
+	</div>
+</div>
+
+<div id="content-right" >
+
+	<div id="main-content" ui-view>
+	
+	</div>
+
 </div>  
+
+<div id="cupon-list">
+	<div>Wybrane typy:</div>
+		<div ng-repeat="item in kupony">
+		{{item.nazwa}}
+	</div>
+	<div id="hide-button" ng-click="runPanel($event)"><i class="fa fa-bars" aria-hidden="true"></i></div>
+
+</div>

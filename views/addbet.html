@@ -1,1 +1,32 @@
-addbet
+<div id="choose-panel" class="margin-bottom">
+	<img ng-click="setCurrentChoice('basketball')" ng-class="{basketball: currentChoice=='basketball'}" src="./images/basketball.png"/>	
+	<img ng-click="setCurrentChoice('soccer')" ng-class="{soccer: currentChoice=='soccer'}"  src="./images/soccer.png"/>	
+	<img ng-click="setCurrentChoice('tenis')" ng-class="{tenis: currentChoice=='tenis'}" src="./images/tenis.png"/>	
+	<img ng-click="setCurrentChoice('volleyball')" ng-class="{volleyball: currentChoice=='volleyball'}" src="./images/volleyball.png"/>	
+</div>
+
+<div id="form-panel">
+	<form>
+		<div class="checkboxed" >
+			<label>Z analizą</label>
+			<input type="checkbox" ng-model="descChecked" checked="checked" name="radio">
+		</div>
+		<label>Wydarzenie</label>
+		<select  class="form-control" ng-model="betEvent">
+			<optgroup label="Picnic">
+			<option ng-repeat="event in events | filter:currentChoice">{{event.home}}-{{event.away}}</option>
+		</select>		
+		<label>Zdarzenie</label>
+		<select class="form-control" ng-model="betType">
+			<option>1</option>
+			<option>X</option>
+			<option>2</option>
+		</select>
+		<input placeholder="kurs" class="form-control" type="number" step="0.01" min="0" ng-model="betCourse"></input>
+		<div ng-show="descChecked">
+			<label>Analiza</label>
+			<textarea  ng-model="betAnalyse"></textarea>
+		</div>
+		<button class="form-control" ng-click="postBet()">Dodaj typ</button>
+	</form>
+</div>

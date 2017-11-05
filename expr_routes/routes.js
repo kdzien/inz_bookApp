@@ -16,6 +16,20 @@ router.get('/bets', function(req,res,next){
 		res.json(bets);
 	});
 });
+router.get('/bets/:choice', function(req,res,next){
+	if(req.params.choice=="light"){
+		Bet.find({isAnalize: {$ne: true}},function(err, bets){
+			if(err){return next(err); }
+			res.json(bets);
+		});
+	}else if(req.params.choice=="desc"){
+		Bet.find({isAnalize: {$ne: false}},function(err, bets){
+			if(err){return next(err); }
+			res.json(bets);
+		});
+	}
+	
+});
 
 router.post('/bets', function(req,res,next){
 	var bet = new Bet(req.body);

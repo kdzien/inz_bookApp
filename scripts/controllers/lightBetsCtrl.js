@@ -1,7 +1,7 @@
 angular.module('betApp').controller('lightBetsCtrl', [
-'$scope','$location', '$http','cuponFactory',
+'$scope','$location', '$http','cuponFactory','$timeout',
 
-function($scope,$location,$http,cuponFactory){
+function($scope,$location,$http,cuponFactory,$timeout){
 
 	$scope.bets = new Array();
 	$http.get("/bets/light").success(function(data) {
@@ -9,7 +9,12 @@ function($scope,$location,$http,cuponFactory){
 	});
 
 	$scope.addItem = function(obj){
-		console.log(obj);
-		cuponFactory.addMecz(obj);
+		if(cuponFactory.addMecz(obj)==1){
+			var warning = document.querySelector('.cupon-warning');
+			warning.style.display="block";
+			$timeout(function(){
+				warning.style.display="none";
+			},1500)
+		};
 	}
 }]);

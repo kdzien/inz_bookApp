@@ -1,9 +1,9 @@
 body {
-  background: #003973;
+  background: #757F9A;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#E5E5BE), to(#003973));
-  background: linear-gradient(to bottom, #E5E5BE, #003973);
+  background: -webkit-gradient(linear, left top, left bottom, from(#D7DDE8), to(#757F9A));
+  background: linear-gradient(to bottom, #D7DDE8, #757F9A);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
@@ -82,13 +82,33 @@ a:hover, a:visited, a:focus {
 }
 
 #cupon-list {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  padding: 20px;
+  font-family: 'Maven Pro', sans-serif;
   color: white;
   background-color: black;
   position: fixed;
-  width: 0px;
+  width: 300px;
   height: 100%;
-  right: 0;
+  right: -300px;
   top: 0;
+}
+#cupon-list #header {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+#cupon-list .cupon-element {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+#cupon-list .cupon-element i {
+  padding-right: 5px;
+  color: red;
+  cursor: pointer;
 }
 #cupon-list #hide-button {
   position: absolute;
@@ -106,4 +126,93 @@ a:hover, a:visited, a:focus {
 }
 #cupon-list #hide-button:hover {
   cursor: pointer;
+}
+#cupon-list .cupon-warning {
+  text-align: center;
+  display: none;
+  color: #f9ec25;
+}
+
+@-webkit-keyframes slideLeft {
+  from {
+    right: -300px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    right: -300px;
+  }
+  to {
+    right: 0px;
+  }
+}
+@-webkit-keyframes slideRight {
+  from {
+    right: 0px;
+  }
+  to {
+    right: -300px;
+  }
+}
+@keyframes slideRight {
+  from {
+    right: 0px;
+  }
+  to {
+    right: -300px;
+  }
+}
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  50% {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+  }
+  75% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+@keyframes shake {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  50% {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+  }
+  75% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+.shake-animation {
+  -webkit-animation-name: shake;
+          animation-name: shake;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
 }

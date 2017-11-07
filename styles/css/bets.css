@@ -23,6 +23,10 @@
   margin-bottom: 10px;
   background-color: initial !important;
 }
+.panel:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
 
 .panel-default {
   border: none;

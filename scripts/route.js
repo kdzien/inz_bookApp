@@ -1,6 +1,6 @@
 angular.module('betApp').config(['$stateProvider', '$urlRouterProvider', 
   function($stateProvider, $urlRouterProvider){
-                $urlRouterProvider.otherwise("/main")
+                $urlRouterProvider.otherwise("/main/descriptionbets")
                  
                 $stateProvider
                         .state('main', {

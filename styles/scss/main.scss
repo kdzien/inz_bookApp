@@ -4,9 +4,9 @@
 
 
 body{
-background: #003973;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: #757F9A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 	color:white;
 }
@@ -83,12 +83,30 @@ a{
 	margin:0 auto;
 }
 #cupon-list{
+	animation-duration:0.5s;
+	animation-fill-mode:forwards;
+	padding:20px;
+	font-family: 'Maven Pro', sans-serif;
+	#header{
+		text-align:center;
+		font-size:20px;
+		margin-bottom:15px;
+	}
+	.cupon-element{
+		margin-bottom:5px;
+		font-size:15px;
+		i{
+			padding-right:5px;
+			color:red;
+			cursor:pointer;
+		}
+	}
 	color:white;
 	background-color:black;
     position: fixed;
-    width: 0px;
+    width: 300px;
     height: 100%;
-    right: 0;
+    right: -300px;
     top: 0;
     #hide-button{
     	position:absolute;
@@ -98,7 +116,7 @@ a{
     	width:50px;
     	height:50px;
     	background-color:black;
-    	i{
+    	i{	
     		font-size:25px;
     		padding:14px 10px 14px 15px;
     	}
@@ -106,4 +124,38 @@ a{
     		cursor:pointer;
     	}
     }
+    .cupon-warning{
+    	text-align:center;
+    	display:none;
+    	color:#f9ec25;
+    }
+}
+@keyframes slideLeft{
+	from{right:-300px;}
+	to{right:0px;}
+}
+@keyframes slideRight{
+	from{right:0px;}
+	to{right:-300px;}
+}
+@keyframes shake {
+	0%{
+		transform:rotate(0deg);
+	}
+	25%{
+		transform:rotate(40deg);
+	}
+	50%{
+		transform:rotate(-40deg)
+	}
+	75%{
+		transform:rotate(20deg)
+	}
+100%{
+		transform:rotate(-20deg)
+	}
+}
+.shake-animation{
+	animation-name:shake;
+    animation-duration:0.2s;
 }

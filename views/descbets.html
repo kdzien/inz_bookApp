@@ -12,11 +12,11 @@
 	</div> -->
 </div>
 
-<div class="panel panel-default" ng-repeat="bet in bets">
+<div class="panel panel-default" ng-repeat="bet in bets" ng-click="addItem(bet)">
   <div class="panel-heading"><b>{{bet.nazwa}}</b>
   <img width="20px" style="float:right" class="{{bet.category}}" ng-src="./images/{{bet.category}}.png" />
   </div>
-  <div class="panel-body">
+  <div class="panel-body" >
 	  <div id="info">
 	  	<div class="col-md-4">Typ:<b>{{bet.typ}}</b></div>
 	  	<div class="col-md-4">Kurs:<b>{{bet.kurs}}</b></div>

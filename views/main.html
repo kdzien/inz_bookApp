@@ -20,10 +20,11 @@
 </div>  
 
 <div id="cupon-list">
-	<div>Wybrane typy:</div>
-		<div ng-repeat="item in kupony">
-		{{item.nazwa}}
-	</div>
-	<div id="hide-button" ng-click="runPanel($event)"><i class="fa fa-bars" aria-hidden="true"></i></div>
+	<div id="header">Twój kupon:</div>
+<!-- 		<div ng-repeat="item in kupony">
+		{{item.nazwa}}</div> -->
+	<div class="cupon-element" ng-click="removeElement(item);" ng-repeat="item in kupony"><i class="fa fa-times" aria-hidden="true"></i>{{item.nazwa}}</div>
+	<div class="cupon-warning">Mecz istnieje juz na kuponie</div>
+	<div id="hide-button" ng-click="runPanel($event)"><i class="fa fa-bars hb" aria-hidden="true"></i></div>
 
 </div>

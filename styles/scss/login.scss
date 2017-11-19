@@ -1,0 +1,96 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+
+#landing-header{
+	color:black;
+	font-family: 'Muli', sans-serif;
+	text-align:center;
+	height:100%;
+	background-attachment:fixed;
+	    background-repeat: no-repeat;
+    background-size: cover;
+	background-image:url('../../images/background.jpg');
+	#welcome{
+		position:relative;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+		#title{
+			font-size:70px;
+		}
+		#subtitle{
+			font-size:32px;
+		}
+		form{
+			margin-top:25px;
+			width:50%;
+			text-align:left;
+			label{
+				margin:0;
+			}
+			color:black;
+			button{
+				width:80%;
+				margin:0 auto;
+			}
+		}
+	}
+}
+#landing-register{
+	color:white;
+	background:lighten(black,15%);
+	padding:60px 0px;
+	form{
+		padding: 20px 0px;
+		width:50% !important;
+		label{
+			margin:0;
+		}
+		input{
+			color:black;
+			background-color:$transparent-white !important;
+		}
+		button{
+			width:80% !important;
+			margin: 0 auto !important;
+			color:black;
+			background-color:$transparent-white !important;
+			&:hover{
+				background-color:white !important;
+			}
+		}
+	}
+}
+#landing-rest{
+	text-align:center;
+	padding:60px 0px;
+	color:black;
+	background: #ECE9E6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	.row{
+		font-size:20px;
+		margin:40px 20px;
+	}
+	i{
+		color:#262626;
+		font-size:100px;
+		display:block;
+		margin:25px 0;
+	}
+}
+.title{
+	font-size:40px;
+	text-align:center;
+}
+.footer{
+	text-align:center;	
+	padding:10px 0px;
+	background:lighten(black,15%);
+}
+.error{
+	font-weight:bold;
+	text-align:center;
+	color:red;
+}

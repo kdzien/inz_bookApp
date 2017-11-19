@@ -6,8 +6,11 @@
 	<ul>
 		<li ng-class="{currentPage: isActive('/main/addbet')}"><a ui-sref="main.addBet" >Dodaj typ</a></li>
 	</ul>
+	<ul>
+		<li ng-class="{currentPage: isActive('/main/ranking')}"><a ui-sref="main.ranking" >Ranking</a></li>
+	</ul>
 	<div id="user">
-		<span><i class="fa fa-user-o" aria-hidden="true"></i>dzieniu</span>
+		<span><i class="fa fa-user-o" aria-hidden="true" ng-click="logout()"></i>{{currentUser}}</span>
 	</div>
 </div>
 
@@ -21,10 +24,9 @@
 
 <div id="cupon-list">
 	<div id="header">Twój kupon:</div>
-<!-- 		<div ng-repeat="item in kupony">
-		{{item.nazwa}}</div> -->
-	<div class="cupon-element" ng-click="removeElement(item);" ng-repeat="item in kupony"><i class="fa fa-times" aria-hidden="true"></i>{{item.nazwa}}</div>
+	<div class="cupon-element" ng-click="removeElement(item);" ng-repeat="item in kupony"><i class="fa fa-times" aria-hidden="true"></i>{{item}}</div>
 	<div class="cupon-warning">Mecz istnieje juz na kuponie</div>
+	<div id="savePanel"><i class="fa fa-floppy-o" aria-hidden="true" ng-click="save()"></i><i class="fa fa-times" aria-hidden="true" ng-click="delete()"></i></div>
 	<div id="hide-button" ng-click="runPanel($event)"><i class="fa fa-bars hb" aria-hidden="true"></i></div>
 
 </div>

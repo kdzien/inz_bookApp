@@ -1,8 +1,18 @@
 angular.module('betApp').config(['$stateProvider', '$urlRouterProvider', 
   function($stateProvider, $urlRouterProvider){
-                $urlRouterProvider.otherwise("/main/descriptionbets")
+                $urlRouterProvider.otherwise("/landing")
                  
                 $stateProvider
+                        .state('landingpage',{
+                            url: "/landing",
+                            templateUrl: "./views/landing.html",
+                            controller: "landingCtrl",
+                            onEnter: ['$state', 'auth', function($state, auth){
+                                if(auth.isLoggedIn()){
+                                  $state.go('main.descBets');
+                                }
+                          }]
+                        })
                         .state('main', {
                             url: "/main",
                             templateUrl: "./views/main.html",
@@ -22,5 +32,10 @@ angular.module('betApp').config(['$stateProvider', '$urlRouterProvider',
                             url: "/addbet",
                             templateUrl: "./views/addbet.html",
                             controller: "addBetCtrl"
-                        }); 
+                        })
+                        .state('main.ranking', {
+                            url: "/ranking",
+                            templateUrl: "./views/ranking.html",
+                            controller: "rankingCtrl"
+                        });
             }]);

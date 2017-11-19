@@ -1,7 +1,7 @@
 angular.module('betApp').controller('addBetCtrl', [
-'$scope','$location', '$http',
+'$scope','$location', '$http','auth',
 
-function($scope,$location,$http){
+function($scope,$location,$http,auth){
 	$scope.currentChoice="basketball";
 	$scope.events=new Array();
 	$scope.descChecked=false;
@@ -22,7 +22,7 @@ function($scope,$location,$http){
 			isAnalize:$scope.descChecked,
 			analiza: $scope.betAnalyse,
 			category:$scope.currentChoice,
-			user:"dzieniu"
+			user:auth.currentUser()
 		}
 		console.log($scope.descChecked);
 			$http.post("/bets", $scope.formJson).success(function(data,status) {

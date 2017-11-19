@@ -1,10 +1,5 @@
 body {
-  background: #757F9A;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#D7DDE8), to(#757F9A));
-  background: linear-gradient(to bottom, #D7DDE8, #757F9A);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #262626;
   color: white;
 }
 
@@ -28,6 +23,7 @@ a:hover, a:visited, a:focus {
   width: 210px;
 }
 #menu-left ul {
+  margin-bottom: 0;
   padding: 0;
   padding: 10px;
 }
@@ -44,11 +40,8 @@ a:hover, a:visited, a:focus {
   opacity: 1;
   cursor: pointer;
 }
-#menu-left ul:first-child {
-  margin-bottom: 0;
-}
 #menu-left #user {
-  border-top: solid 1px #1D2B64;
+  border-top: solid 1px white;
   width: 170px;
   padding: 10px;
   position: fixed;
@@ -109,6 +102,22 @@ a:hover, a:visited, a:focus {
   padding-right: 5px;
   color: red;
   cursor: pointer;
+}
+#cupon-list #savePanel {
+  color: red;
+  position: fixed;
+  bottom: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  padding: 10px;
+}
+#cupon-list #savePanel i {
+  color: white;
+  cursor: pointer;
+  font-size: 30px;
+}
+#cupon-list #savePanel i:first-child {
+  padding-right: 20px;
 }
 #cupon-list #hide-button {
   position: absolute;

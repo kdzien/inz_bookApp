@@ -4,10 +4,7 @@
 
 
 body{
-background: #757F9A;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+	background-color:#262626;
 	color:white;
 }
 a{
@@ -28,6 +25,7 @@ a{
 	height:100%;
 	width:210px;
 	ul{
+		margin-bottom:0;
 		@include remove-padding();
 		padding:10px;
 		// @include custom-border(1px,$transparent-white,topbottom);
@@ -43,9 +41,6 @@ a{
 				opacity:1;
 				cursor:pointer;
 			}
-		}
-		&:first-child{
-			margin-bottom:0;
 		}
 	}
 	#user{
@@ -99,6 +94,21 @@ a{
 			padding-right:5px;
 			color:red;
 			cursor:pointer;
+		}
+	}
+	#savePanel{
+		color:red;
+		position:fixed;
+		bottom:0;
+		transform:translateX(100%);
+		padding:10px;
+		i{
+			color:white;
+			cursor:pointer;
+			font-size:30px;
+		&:first-child{
+			padding-right:20px;
+		}
 		}
 	}
 	color:white;

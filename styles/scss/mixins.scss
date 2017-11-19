@@ -10,6 +10,10 @@
 	@if $type=="top"{
 	border-top:solid $size $color;
 	}
+	@if $type=="sides"{
+	border-right:solid $size $color;
+	border-left:solid $size $color;
+	}
 }
 
 @mixin sport-icon($color){

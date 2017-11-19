@@ -29,8 +29,8 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 #form-panel form select:focus, #form-panel form input:focus, #form-panel form textarea:focus, #form-panel form button:focus {
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(38, 245, 73, 0.6);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(38, 245, 73, 0.6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px white;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px white;
 }
 #form-panel form button:hover {
   background-color: black;

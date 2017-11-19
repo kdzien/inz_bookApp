@@ -1,0 +1,21 @@
+.rank{
+	margin:20px 200px;
+
+	th,tr{
+		text-align:center !important;
+	}
+}
+
+//override
+.progress{
+	margin-bottom:0;
+}
+.progress-bar-success{
+	background-color:#2fc70d;
+}
+.progress-bar-danger{
+	background-color:#d6211c;
+}
+.green{
+	color:#2fc70d;
+}

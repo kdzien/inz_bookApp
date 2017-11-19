@@ -1,0 +1,22 @@
+.rank {
+  margin: 20px 200px;
+}
+.rank th, .rank tr {
+  text-align: center !important;
+}
+
+.progress {
+  margin-bottom: 0;
+}
+
+.progress-bar-success {
+  background-color: #2fc70d;
+}
+
+.progress-bar-danger {
+  background-color: #d6211c;
+}
+
+.green {
+  color: #2fc70d;
+}

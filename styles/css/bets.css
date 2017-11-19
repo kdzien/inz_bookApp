@@ -8,8 +8,8 @@
 .small-bet {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);
-  margin-right: 5px;
-  border-radius: 10px;
+  border-right: solid 1px white;
+  border-left: solid 1px white;
   margin-bottom: 10px;
 }
 .small-bet:hover {

@@ -1,9 +1,14 @@
 angular.module('betApp').controller('mainCtrl', [
-'$scope','$location','cuponFactory',
+'$scope','$location','cuponFactory','auth','$timeout',
 
-function($scope,$location,cuponFactory){
+function($scope,$location,cuponFactory,auth,$timeout){
 
-	$scope.kupony = cuponFactory.getKupon();
+	$scope.currentUser=auth.currentUser();
+	
+	$timeout(function(){
+		$scope.kupony = cuponFactory.getKupon();
+	},100)
+
 	var isListHide=true;
 	$scope.isActive = function (viewLocation) {
  		var active = (viewLocation === $location.path());
@@ -23,5 +28,14 @@ function($scope,$location,cuponFactory){
 	}
 	$scope.removeElement = function(item){
 		cuponFactory.removeMecz(item);
+	}
+	$scope.logout = function(){
+		auth.logOut();
+	}
+	$scope.save=function(){
+		cuponFactory.saveCupon();
+	}
+	$scope.delete=function(){
+		cuponFactory.removeCupon();
 	}
 }]);

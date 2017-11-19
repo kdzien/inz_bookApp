@@ -10,8 +10,7 @@
 .small-bet{
 	padding:$elements-padding;
 	background-color:$transparent-black;
-	margin-right:5px;
-	border-radius:10px;
+	@include custom-border(1px,$second-color,sides);
 	margin-bottom:10px;
 	&:hover{
 		opacity:0.6;

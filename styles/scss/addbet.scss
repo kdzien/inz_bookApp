@@ -6,7 +6,7 @@
 	text-align:center;
 	img{
 		margin-right:20px;
-		width:40px;
+		width:50px;
 	&:hover{
 		cursor:pointer;
 	}
@@ -59,9 +59,9 @@
 }
 .soccer{@include sport-icon(white);
 }
-.tenis{@include sport-icon(#e3f12e);
+.handball{@include sport-icon(#3277FF);
 }
-.volleyball{@include sport-icon(white);
+.volleyball{@include sport-icon(#e3f12e);
 }
 .checkboxed{
 	text-align:center;

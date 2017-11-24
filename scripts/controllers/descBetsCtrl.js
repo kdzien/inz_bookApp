@@ -1,12 +1,10 @@
 angular.module('betApp').controller('descBetsCtrl', [
-'$scope','$location','$http','cuponFactory','$timeout',
-function($scope,$location,$http,cuponFactory,$timeout){
+'$scope','$location','$http','cuponFactory','$timeout','auth',
+function($scope,$location,$http,cuponFactory,$timeout,auth){
 
 	$scope.bets = new Array();
-	$http.get("/bets/desc").success(function(data) {
-			$scope.bets = data;
-			console.log(data);
-	});
+	$scope.errorMessage=""
+	getData();
 
 	$scope.addItem = function(obj){
 		if(cuponFactory.addMecz(obj)==1){
@@ -17,4 +15,25 @@ function($scope,$location,$http,cuponFactory,$timeout){
 			},1500)
 		};
 	}
+	function getData(){
+		$http.get("/bets/desc").success(function(data) {
+			$scope.bets = data;
+		});	
+	}
+	$scope.iksde = function(obj){
+		$http.delete("/bets/"+obj._id).success(function(data) {
+			$scope.errorMessage=data;
+			$timeout(function(){
+				$scope.errorMessage="";
+			},3000)	
+			getData();
+		});
+	}
+	$scope.checkUser = function(x){
+		if(x.user==auth.currentUser()){
+			return true;
+		}
+		return false;
+	}
+
 }]);

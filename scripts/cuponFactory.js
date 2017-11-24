@@ -1,6 +1,6 @@
-angular.module('betApp').service('cuponFactory', ['auth','$http',
+angular.module('betApp').service('cuponFactory', ['auth','$http','$timeout',
 
-function(auth,$http){
+function(auth,$http,$timeout){
 
 	var kupon = new Array();
 
@@ -15,6 +15,10 @@ function(auth,$http){
 	var addMecz = function(mecz){
 		var exist = checkMecz(mecz);
 		if(exist==true){
+			document.getElementById("hbx").style.transform="rotateX(360deg)";
+			$timeout(function(){
+				document.getElementById("hbx").style.transform="none";
+			},400)
 			kupon.push(mecz);	
 			return 0;
 		}

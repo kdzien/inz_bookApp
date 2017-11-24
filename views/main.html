@@ -1,4 +1,4 @@
-<div id="menu-left">
+	<div id="menu-left">
 	<ul>
 		<li ng-class="{currentPage: isActive('/main/descriptionbets')}"><a ui-sref="main.descBets" >Typy z analizą</a></li>
 		<li ng-class="{currentPage: isActive('/main/lightbets')}"><a ui-sref="main.lightBets" >Luźne typy</a></li>
@@ -27,6 +27,6 @@
 	<div class="cupon-element" ng-click="removeElement(item);" ng-repeat="item in kupony"><i class="fa fa-times" aria-hidden="true"></i>{{item}}</div>
 	<div class="cupon-warning">Mecz istnieje juz na kuponie</div>
 	<div id="savePanel"><i class="fa fa-floppy-o" aria-hidden="true" ng-click="save()"></i><i class="fa fa-times" aria-hidden="true" ng-click="delete()"></i></div>
-	<div id="hide-button" ng-click="runPanel($event)"><i class="fa fa-bars hb" aria-hidden="true"></i></div>
+	<div id="hide-button" ng-click="runPanel($event)"><i id="hbx" style="transition: transform 0.5s" class="fa fa-bars hb" aria-hidden="true"></i></div>
 
 </div>

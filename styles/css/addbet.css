@@ -3,7 +3,7 @@
 }
 #choose-panel img {
   margin-right: 20px;
-  width: 40px;
+  width: 50px;
 }
 #choose-panel img:hover {
   cursor: pointer;
@@ -60,13 +60,13 @@
   border-radius: 50%;
 }
 
-.tenis {
-  background-color: #e3f12e;
+.handball {
+  background-color: #3277FF;
   border-radius: 50%;
 }
 
 .volleyball {
-  background-color: white;
+  background-color: #e3f12e;
   border-radius: 50%;
 }
 

@@ -1,14 +1,35 @@
 angular.module('betApp').controller('addBetCtrl', [
-'$scope','$location', '$http','auth',
+'$scope','$location', '$http','auth','$timeout',
 
-function($scope,$location,$http,auth){
+function($scope,$location,$http,auth,$timeout){
 	$scope.currentChoice="basketball";
 	$scope.events=new Array();
 	$scope.descChecked=false;
+	$scope.errorMessage=""
 
 	$http.get("/events").success(function(data) {
-		$scope.events=data;
-		console.log($scope.events);
+		console.log(data);
+		var all=[]
+		for(var i=0;i<=data.length-1;i++){
+			var league = {sport:data[i].discipline,league:data[i].league,matches:[]}
+			if(containsObject(league,all)==false){
+				all.push(league);
+			}
+			else{
+				continue;
+			}
+		}
+		label:
+		for(var i=0;i<=data.length-1;i++){
+			for(var k=0;k<=all.length-1;k++){
+				if(all[k].sport===data[i].discipline && all[k].league==data[i].league){
+					all[k].matches.push(data[i]);
+					continue label;
+				}
+			}
+		}
+		//console.log($scope.events);
+		$scope.allE=all;
 	});
 
 	$scope.setCurrentChoice = function(choice){
@@ -24,9 +45,12 @@ function($scope,$location,$http,auth){
 			category:$scope.currentChoice,
 			user:auth.currentUser()
 		}
-		console.log($scope.descChecked);
+		console.log($scope.formJson);
 			$http.post("/bets", $scope.formJson).success(function(data,status) {
-				console.log(data);
+				$scope.errorMessage=data;
+				$timeout(function(){
+					$scope.errorMessage = "";
+				},3000)
 			});			
 		}
 
@@ -38,4 +62,13 @@ function($scope,$location,$http,auth){
 		$scope.currentChoice="";
 	}
 
+	function containsObject(obj, list) {
+    var i;
+    for (i = 0; i <= list.length-1; i++) {
+        if (list[i].sport == obj.sport && list[i].league==obj.league) {
+            return true;
+        }
+    }
+    return false;
+}
 }]);

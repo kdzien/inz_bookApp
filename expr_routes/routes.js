@@ -38,21 +38,53 @@ router.get('/bets/:choice', function(req,res,next){
 	
 });
 
-router.post('/bets', function(req,res,next){
+router.post('/bets/', function(req,res,next){
 	var currentUser=req.body.user;
-	var bet = new Bet(req.body);
-	bet.save(function(err,bets){
-		if(err){return next(err);}
-		res.json(bet);
-	});
-	User.findOne({ 'name': currentUser },function(err,user){
-		user.upBetCount(function(err,post){
-		})
+	var brakujace=""
+	var send=true;
+	if(req.body.nazwa==undefined){
+		send=false;
+		brakujace+="typ "
+	}
+	if(req.body.typ==undefined){
+		send=false;
+		brakujace+="wydarzenie, "
+	}
+	if(req.body.kurs==undefined){
+		send=false;
+		brakujace+="kurs"
+	}
+
+	Bet.findOne({nazwa : req.body.nazwa, user: currentUser},function(err,bet){
+		if(bet==null){
+			if(send==false){
+				res.json("Uzupełnij brakujące pola: " + brakujace)
+				return;
+			}else{
+				var bet = new Bet(req.body);
+				bet.save(function(err,bets){
+					if(err){return next(err);}
+					res.json("Dodano typ");
+				});
+				User.findOne({ 'name': currentUser,  },function(err,user){
+					user.upBetCount(function(err,post){
+					})
+				})
+			}
+		}
+		else{
+			res.json("Dodałeś już typ na to wydarzenie")
+		}
 	})
+	
+
 });
 
+
 router.get('/events', function(req, res){
-	Events.find(function(err, events){
+	var currentDate = new Date();
+	var stringDate =currentDate.getHours()+":"+currentDate.getMinutes();
+	Events.find({"time": { $gte: stringDate}},function(err, events){
 		if(err){return next(err); }
 		res.json(events);
 	});
@@ -84,9 +116,26 @@ router.delete('/cupon/:user',function(req,res,next){
 		})
 	})
 })
-
-
-
+router.delete('/bets/:id',function(req,res,next){
+	Bet.findOne({_id:req.params.id}, function(err,bet){
+		var currentUser=bet.user;
+		var dateDiffrence = new Date()-bet.data
+		var diffMins = Math.round(((dateDiffrence % 86400000) % 3600000) / 60000);
+		console.log(diffMins)
+		if(diffMins<5){
+			Bet.findOneAndRemove({_id: req.params.id}, function(err){
+				res.json("usunięto typ")
+			});
+			User.findOne({ 'name': currentUser,},function(err,user){
+				user.downBetCount(function(err,post){
+				})
+			})
+		}
+		else{
+			res.json("Za późno na usunięcie typu");
+		}
+	});
+})
 
 //logowanie-rejestracja
 router.post('/register', function(req,res){

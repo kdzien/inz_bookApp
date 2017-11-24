@@ -1,4 +1,9 @@
 <div class="rank">
+<div id="form-panel">
+	<form>
+		<input placeholder="wyszukaj" class="form-control" ng-model="userSearch"></input>
+	</form>
+</div>
 	<table class="table">
 		<thead>
 			<tr>
@@ -9,16 +14,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="stat in stats | orderBy:'-rank/betCount'" ng-if="stat.betCount > 0" ng-class='{green : stat.name==currentUser}'>
+			<tr ng-repeat="stat in stats | orderBy:'-rank/betCount' | filter: userSearch  track by $index" ng-if="stat.betCount > 0" ng-class='{green : stat.name==currentUser}'>
 				<td>{{stat.name}}</td>
 				<td>{{stat.betCount}}</td>
 				<td>{{stat.rank}}</td>
 				<td>
 					<div class="progress">
 						<div class="progress-bar progress-bar-success" role="progressbar" style="width:{{getPercentage(stat)[0]}}%">
-						{{getPercentage(stat)[0]}}%
-						</div>
-						<div class="progress-bar progress-bar-danger" role="progressbar" style="width:{{getPercentage(stat)[1]}}%">
 						</div>
 					</div>
 				</td>

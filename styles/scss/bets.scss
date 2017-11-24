@@ -12,8 +12,9 @@
 	background-color:$transparent-black;
 	@include custom-border(1px,$second-color,sides);
 	margin-bottom:10px;
+	transition:transform 0.2s;
 	&:hover{
-		opacity:0.6;
+		transform:scale(1.02);
 		cursor:pointer;
 	}
 }
@@ -23,8 +24,9 @@
 	margin:0 auto;
 	margin-bottom:10px;
 	background-color:initial !important;
+	transition:transform 0.2s;
 	&:hover{
-		opacity:0.6;
+		transform:scale(1.02);
 		cursor:pointer;
 	}
 }

@@ -10,4 +10,6 @@ var betSchema = mongoose.Schema({
    category:String,
    user:String
 });
+
+
 var Bet = mongoose.model("Bet", betSchema);

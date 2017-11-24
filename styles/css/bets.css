@@ -11,9 +11,14 @@
   border-right: solid 1px white;
   border-left: solid 1px white;
   margin-bottom: 10px;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 .small-bet:hover {
-  opacity: 0.6;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
   cursor: pointer;
 }
 
@@ -22,9 +27,14 @@
   margin: 0 auto;
   margin-bottom: 10px;
   background-color: initial !important;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 .panel:hover {
-  opacity: 0.6;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
   cursor: pointer;
 }
 

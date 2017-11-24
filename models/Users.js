@@ -13,7 +13,7 @@ var userSchema = mongoose.Schema({
 		required:true
 	},
 	betCount: {type: Number, default: 0},
-	rank: {type: Number, default: 3},
+	rank: {type: Number, default: 0},
 	hash:String,
 	salt:String
 
@@ -43,6 +43,10 @@ userSchema.methods.generateJwt = function() {
 
 userSchema.methods.upBetCount = function(cb){
 	this.betCount +=1;
+	this.save(cb);
+}
+userSchema.methods.downBetCount = function(cb){
+	this.betCount -=1;
 	this.save(cb);
 }
 userSchema.methods.upRank = function(cb){

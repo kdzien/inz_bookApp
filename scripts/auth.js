@@ -26,7 +26,7 @@ auth.currentUser = function(){
     var token = auth.getToken();
     var payload = JSON.parse($window.atob(token.split('.')[1]));
 
-    return payload.name;
+    return payload;
   }
 };
 

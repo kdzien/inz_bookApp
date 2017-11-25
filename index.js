@@ -7,6 +7,7 @@ var logger = require('morgan');
 require('./models/Bet');
 require('./models/Events');
 require('./models/Cupon');
+require('./models/Rank');
 
 require('./models/Users');
 require('./config/passport')

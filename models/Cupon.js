@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var cuponSchema = mongoose.Schema({
-	user:String,
+	user:{ type: mongoose.Schema.Types.ObjectId,ref:'Users'},
 	matches: [String],
 	date:Date
 });

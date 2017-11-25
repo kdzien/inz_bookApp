@@ -8,7 +8,7 @@ var betSchema = mongoose.Schema({
    isAnalize: Boolean,
    analiza: String,
    category:String,
-   user:String
+   user:{ type: mongoose.Schema.Types.ObjectId,ref:'Users' }
 });
 
 

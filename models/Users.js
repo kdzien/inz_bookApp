@@ -12,8 +12,7 @@ var userSchema = mongoose.Schema({
 		type:String,
 		required:true
 	},
-	betCount: {type: Number, default: 0},
-	rank: {type: Number, default: 0},
+	
 	hash:String,
 	salt:String
 
@@ -40,18 +39,5 @@ userSchema.methods.generateJwt = function() {
     exp: parseInt(expiry.getTime() / 1000),
   }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE!
 };
-
-userSchema.methods.upBetCount = function(cb){
-	this.betCount +=1;
-	this.save(cb);
-}
-userSchema.methods.downBetCount = function(cb){
-	this.betCount -=1;
-	this.save(cb);
-}
-userSchema.methods.upRank = function(cb){
-	this.rank +=1;
-	this.save(cb)
-}
 
 var Users = mongoose.model("Users", userSchema);

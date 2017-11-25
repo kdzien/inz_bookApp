@@ -30,7 +30,7 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 		});
 	}
 	$scope.checkUser = function(x){
-		if(x.user==auth.currentUser()){
+		if(x.user.name==auth.currentUser().name){
 			return true;
 		}
 		return false;

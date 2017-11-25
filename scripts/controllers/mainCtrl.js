@@ -3,7 +3,8 @@ angular.module('betApp').controller('mainCtrl', [
 
 function($scope,$location,cuponFactory,auth,$timeout){
 
-	$scope.currentUser=auth.currentUser();
+	$scope.currentUser=auth.currentUser().name;
+	console.log($scope.currentUser)
 	
 	$timeout(function(){
 		$scope.kupony = cuponFactory.getKupon();

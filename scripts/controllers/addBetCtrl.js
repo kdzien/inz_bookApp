@@ -43,7 +43,7 @@ function($scope,$location,$http,auth,$timeout){
 			isAnalize:$scope.descChecked,
 			analiza: $scope.betAnalyse,
 			category:$scope.currentChoice,
-			user:auth.currentUser()
+			user:auth.currentUser()._id
 		}
 		console.log($scope.formJson);
 			$http.post("/bets", $scope.formJson).success(function(data,status) {

@@ -4,7 +4,7 @@ function(auth,$http,$timeout){
 
 	var kupon = new Array();
 
-	$http.get("/cupon/"+auth.currentUser()).success(function(data){
+	$http.get("/cupon/"+auth.currentUser()._id).success(function(data){
 		kupon=data.matches;
 	})
 
@@ -37,13 +37,17 @@ function(auth,$http,$timeout){
 	}
 
 	var saveCupon = function(){
-		$http.post("/cupon/"+auth.currentUser(),kupon).success(function(data) {
+		$http.post("/cupon/"+auth.currentUser()._id,kupon).success(function(data) {
 		});
 	}
 
 	var removeCupon = function(){
-		$http.delete("/cupon/"+auth.currentUser()).success(function(data) {
+		$http.delete("/cupon/"+auth.currentUser()._id).success(function(data) {
+			$http.get("/cupon/"+auth.currentUser()._id).success(function(data){
+				kupon=data.matches;
+			})
 		});
+
 	}
   return {
     getKupon: getKupon,

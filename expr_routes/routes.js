@@ -7,6 +7,8 @@ var User = mongoose.model('Users');
 var Bet = mongoose.model("Bet");
 var Cupon = mongoose.model("Cupons");
 var Events = mongoose.model("Events");
+var Rank = mongoose.model("Rank");
+
 var jwt = require('express-jwt');
 var auth = jwt({
   secret: 'MY_SECRET',
@@ -16,7 +18,29 @@ var auth = jwt({
 router.get('/', function(req, res){
 	res.sendFile(__dirname.replace("expr_routes", "views") + '/index.html');
 });
-
+/**
+ * @api {get} /tasks/:id Find a task
+ * @apiGroup Tasks
+ * @apiParam {id} id Task id
+ * @apiSuccess {Number} id Task id
+ * @apiSuccess {String} title Task title
+ * @apiSuccess {Boolean} done Task is done?
+ * @apiSuccess {Date} updated_at Update's date
+ * @apiSuccess {Date} created_at Register's date
+ * @apiSuccessExample {json} Success
+ *    HTTP/1.1 200 OK
+ *    {
+ *      "id": 1,
+ *      "title": "Study",
+ *      "done": false
+ *      "updated_at": "2016-02-10T15:46:51.778Z",
+ *      "created_at": "2016-02-10T15:46:51.778Z"
+ *    }
+ * @apiErrorExample {json} Task not found
+ *    HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} Find error
+ *    HTTP/1.1 500 Internal Server Error
+ */
 router.get('/bets', function(req,res,next){
 	Bet.find(function(err, bets){
 		if(err){return next(err); }
@@ -25,21 +49,20 @@ router.get('/bets', function(req,res,next){
 });
 router.get('/bets/:choice', function(req,res,next){
 	if(req.params.choice=="light"){
-		Bet.find({isAnalize: {$ne: true}},function(err, bets){
+		Bet.find({isAnalize: {$ne: true}}).populate('user').exec(function(err, bets){
 			if(err){return next(err); }
 			res.json(bets);
 		});
 	}else if(req.params.choice=="desc"){
-		Bet.find({isAnalize: {$ne: false}},function(err, bets){
+		Bet.find({isAnalize: {$ne: false}}).populate('user').exec(function(err, bets){
 			if(err){return next(err); }
 			res.json(bets);
 		});
 	}
-	
 });
 
 router.post('/bets/', function(req,res,next){
-	var currentUser=req.body.user;
+	var currentUserId=req.body.user;
 	var brakujace=""
 	var send=true;
 	if(req.body.nazwa==undefined){
@@ -55,7 +78,7 @@ router.post('/bets/', function(req,res,next){
 		brakujace+="kurs"
 	}
 
-	Bet.findOne({nazwa : req.body.nazwa, user: currentUser},function(err,bet){
+	Bet.findOne({nazwa : req.body.nazwa, user: currentUserId},function(err,bet){
 		if(bet==null){
 			if(send==false){
 				res.json("Uzupełnij brakujące pola: " + brakujace)
@@ -64,12 +87,13 @@ router.post('/bets/', function(req,res,next){
 				var bet = new Bet(req.body);
 				bet.save(function(err,bets){
 					if(err){return next(err);}
+					Rank.findOne({ 'user':currentUserId}).populate('user').exec(function(err, rank){
+						rank.upBetCount(function(err,post){
+						})
+					})
 					res.json("Dodano typ");
 				});
-				User.findOne({ 'name': currentUser,  },function(err,user){
-					user.upBetCount(function(err,post){
-					})
-				})
+				
 			}
 		}
 		else{
@@ -92,26 +116,26 @@ router.get('/events', function(req, res){
 
 router.get('/rank', function(req,res){
 	var users = new Array;
-	User.find({}, 'name betCount rank',function(err,stats){
+	Rank.find({}).populate('user').exec(function(err, ranks){
 		if(err){return next(err);}
-		res.json(stats)
+		res.json(ranks)
 	})
 })
+
 router.get('/cupon/:user', function(req,res,next){
-	Cupon.findOne({'user':req.params.user},function(err,cupon){
+	Cupon.findOne({'user':req.params.user}).populate('user').exec(function(err,cupon){
 		if(err){return next(err);}
 		res.json(cupon);
 	})
 })
-
 router.post('/cupon/:user',function(req,res,next){
-	Cupon.findOne({ 'user': req.params.user },function(err,cupon){
+	Cupon.findOne({'user':req.params.user}).populate('user').exec(function(err,cupon){
 		cupon.updateC(req.body,function(err,post){
 		})
 	})
 })
 router.delete('/cupon/:user',function(req,res,next){
-	Cupon.findOne({ 'user': req.params.user },function(err,cupon){
+	Cupon.findOne({'user':req.params.user}).populate('user').exec(function(err,cupon){
 		cupon.removeC(function(err,post){
 		})
 	})
@@ -126,8 +150,8 @@ router.delete('/bets/:id',function(req,res,next){
 			Bet.findOneAndRemove({_id: req.params.id}, function(err){
 				res.json("usunięto typ")
 			});
-			User.findOne({ 'name': currentUser,},function(err,user){
-				user.downBetCount(function(err,post){
+			Rank.findOne({ 'user':currentUser}).populate('user').exec(function(err, rank){
+				rank.downBetCount(function(err,post){
 				})
 			})
 		}
@@ -139,26 +163,31 @@ router.delete('/bets/:id',function(req,res,next){
 
 //logowanie-rejestracja
 router.post('/register', function(req,res){
-	var cupon = new Cupon();
-	cupon.user=req.body.username;
-	cupon.matches=[];
-	cupon.date=new Date();
-	cupon.save(function(err,cupon){
-		if(err){return next(err);}
-	})
-
 	var user = new User();
 	user.name = req.body.username;
 	user.email = req.body.email;
 	var password = req.body.password;
 	user.setPassword(password);
 	user.save(function(err,user){
-		var token;
-		token=user.generateJwt();
-		res.status(200);
-    	res.json({
-      		"token" : token
-    	});
+		var cupon = new Cupon();
+		cupon.user=user._id;
+		cupon.matches=[];
+		cupon.date=new Date();
+		cupon.save(function(err,cupon){
+			if(err){return next(err);}
+			var rank = new Rank();
+			rank.user=user._id;
+			rank.save(function(err,rank){
+				var token;
+				token=user.generateJwt();
+				res.status(200);
+		    	res.json({
+		      		"token" : token
+		    	});				
+			})
+
+		})
+		
 	});
 });
 

@@ -194,8 +194,8 @@ var checkScore=function(co_obstawil,wynik1,wynik2){
 }
 
 var updateUserRank = function(user){
-	Users.findOne({ 'name': user },function(err,user){
-		user.upRank(function(err,rank){
+	Rank.findOne({ 'user': user },function(err,rank){
+		rank.upRank(function(err,rankx){
 		})
 	})
 }

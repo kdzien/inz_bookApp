@@ -4,7 +4,7 @@ angular.module('betApp').controller('rankingCtrl', [
 function($scope,$location,$http,cuponFactory,$timeout,auth){
 
 	$scope.stats = new Array();
-	$scope.currentUser=auth.currentUser();
+	$scope.currentUser=auth.currentUser().name;
 	$http.get("/rank").success(function(data) {
 		$scope.stats = data;
 		console.log($scope.stats);

@@ -30,6 +30,9 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/baza_inzynierka', {
   useMongoClient: true,
 });
+mongoose.connect('mongodb://heroku_j607f6fk:ub046pqmt6jamj5nhfmnir690s@ds125146.mlab.com:25146/heroku_j607f6fk', {
+  useMongoClient: true,
+});
 
 app.use('/scripts', express.static(__dirname + '/scripts/'));
 app.use('/views', express.static(__dirname + '/views/'));

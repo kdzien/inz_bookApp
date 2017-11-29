@@ -10,7 +10,6 @@
 .small-bet{
 	padding:$elements-padding;
 	background-color:$transparent-black;
-	@include custom-border(1px,$second-color,sides);
 	margin-bottom:10px;
 	transition:transform 0.2s;
 	&:hover{

@@ -11,21 +11,22 @@
 			<label>Z analizą</label>
 			<input type="checkbox" ng-model="descChecked" checked="checked" name="radio">
 		</div>
-		<label>Wydarzenie</label>
+		<label>Wydarzenie*</label>
 
 		<select class="form-control" ng-model="betEvent">
 			<optgroup ng-repeat="a in allE | filter:currentChoice" label="{{a.league}}">
-				<option ng-repeat="event in a.matches">{{event.time}} {{event.match_name}}</option>
+				<option ng-repeat="event in a.matches">{{event.match_name}}</option>
 			</optgroup>
 		</select>		
 
-		<label>Zdarzenie</label>
+		<label>Zdarzenie*</label>
 		<select class="form-control" ng-model="betType">
 			<option>1</option>
 			<option>X</option>
 			<option>2</option>
 		</select>
-		<input placeholder="kurs" class="form-control" type="number" step="0.01" min="0" ng-model="betCourse"></input>
+		<label>Kurs*</label>
+		<input placeholder="" class="form-control" type="number" step="0.01" min="0" ng-model="betCourse"></input>
 		<div ng-show="descChecked">
 			<label>Analiza</label>
 			<textarea  ng-model="betAnalyse"></textarea>

@@ -15,6 +15,10 @@
   background-color: #77F60F;
 }
 
+table tbody tr td {
+  border-top: none !important;
+}
+
 .green {
   color: #77F60F;
 }

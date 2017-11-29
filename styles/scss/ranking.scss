@@ -4,6 +4,7 @@
 
 	th,tr{
 		text-align:center !important;
+
 	}
 }
 
@@ -17,6 +18,15 @@
 }
 .progress-bar-danger{
 	
+}
+table{
+	tbody{
+		tr{
+			td{
+				border-top:none !important;
+			}
+		}
+	}
 }
 .green{
 	color:#77F60F;

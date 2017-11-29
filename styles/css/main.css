@@ -22,10 +22,25 @@ a:hover, a:visited, a:focus {
   height: 100%;
   width: 210px;
 }
+@media screen and (max-width: 720px) {
+  #menu-left {
+    background-color: black;
+    z-index: 999;
+    width: 100%;
+    position: inherit;
+    height: auto;
+  }
+}
 #menu-left ul {
   margin-bottom: 0;
   padding: 0;
   padding: 10px;
+}
+@media screen and (max-width: 720px) {
+  #menu-left ul {
+    padding: 0px;
+    text-align: center;
+  }
 }
 #menu-left ul li {
   padding-top: 10px;
@@ -35,6 +50,11 @@ a:hover, a:visited, a:focus {
 }
 #menu-left ul li:last-child {
   padding-bottom: 10px;
+}
+@media screen and (max-width: 720px) {
+  #menu-left ul li:last-child {
+    padding-bottom: 0px;
+  }
 }
 #menu-left ul li:hover {
   opacity: 1;
@@ -48,6 +68,14 @@ a:hover, a:visited, a:focus {
   bottom: 0;
   font-size: 18px;
 }
+@media screen and (max-width: 720px) {
+  #menu-left #user {
+    position: inherit;
+    border-top: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
 #menu-left #user span i {
   font-size: 18px;
   padding-right: 20px;
@@ -60,6 +88,12 @@ a:hover, a:visited, a:focus {
   overflow: auto;
   padding-left: 210px;
   height: 100%;
+}
+@media screen and (max-width: 720px) {
+  #content-right {
+    padding-left: 0px;
+    overflow: none;
+  }
 }
 #content-right #main-content {
   padding: 20px;

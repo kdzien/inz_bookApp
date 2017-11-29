@@ -20,6 +20,13 @@ a{
 	font-weight:bold;
 	padding:$head-padding;
 	background-color:$transparent-black;
+	@media screen and (max-width: 720px) {
+	    background-color:black;
+	    z-index:999;
+	    width:100%;
+	    position:inherit;
+	    height:auto;
+  	}
 	position:fixed;
 	display:inline-block;
 	height:100%;
@@ -28,14 +35,22 @@ a{
 		margin-bottom:0;
 		@include remove-padding();
 		padding:10px;
+		@media screen and (max-width: 720px) {
+	    	padding:0px;
+	    	text-align:center;
+  		}
 		// @include custom-border(1px,$transparent-white,topbottom);
 		li{
+			
 			padding-top:$elements-padding;
 			list-style-type:none;
 			font-size:16px;
 			opacity:0.5;
 			&:last-child{
 				padding-bottom:$elements-padding;
+				@media screen and (max-width: 720px) {
+	    			padding-bottom:0px;
+  				}
 			}		
 			&:hover{
 				opacity:1;
@@ -45,6 +60,12 @@ a{
 	}
 	#user{
 		@include custom-border(1px,$second-color,top);
+		@media screen and (max-width: 720px) {
+	    	position:inherit;
+	    	border-top:none;
+	    	text-align:center;
+	    	margin:0 auto;
+  		}
 		width:170px;
 		padding:$elements-padding;
 		position:fixed;
@@ -63,6 +84,10 @@ a{
 	}
 }
 #content-right{
+	@media screen and (max-width: 720px) {
+	    padding-left:0px;
+	    overflow:none;
+  	}
 	overflow:auto;
 	padding-left:210px;
 	height:100%;

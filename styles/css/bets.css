@@ -8,8 +8,6 @@
 .small-bet {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);
-  border-right: solid 1px white;
-  border-left: solid 1px white;
   margin-bottom: 10px;
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;

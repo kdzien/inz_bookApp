@@ -44,10 +44,13 @@ function($scope,$location,$http,auth,$timeout){
 			analiza: $scope.betAnalyse,
 			category:$scope.currentChoice,
 			user:auth.currentUser()._id
-		}
-		console.log($scope.formJson);
+		};
 			$http.post("/bets", $scope.formJson).success(function(data,status) {
 				$scope.errorMessage=data;
+				$scope.betEvent=""
+				$scope.betType=""
+				$scope.betCourse=""
+				$scope.betAnalyse=""
 				$timeout(function(){
 					$scope.errorMessage = "";
 				},3000)

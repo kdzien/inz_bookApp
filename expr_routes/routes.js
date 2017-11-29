@@ -18,30 +18,7 @@ var auth = jwt({
 router.get('/', function(req, res){
 	res.sendFile(__dirname.replace("expr_routes", "views") + '/index.html');
 });
-/**
- * @api {get} /tasks/:id Find a task
- * @apiGroup Tasks
- * @apiParam {id} id Task id
- * @apiSuccess {Number} id Task id
- * @apiSuccess {String} title Task title
- * @apiSuccess {Boolean} done Task is done?
- * @apiSuccess {Date} updated_at Update's date
- * @apiSuccess {Date} created_at Register's date
- * @apiSuccessExample {json} Success
- *    HTTP/1.1 200 OK
- *    {
- *      "id": 1,
- *      "title": "Study",
- *      "done": false
- *      "updated_at": "2016-02-10T15:46:51.778Z",
- *      "created_at": "2016-02-10T15:46:51.778Z"
- *    }
- * @apiErrorExample {json} Task not found
- *    HTTP/1.1 404 Not Found
- * @apiErrorExample {json} Find error
- *    HTTP/1.1 500 Internal Server Error
- */
-router.get('/bets', function(req,res,next){
+router.get('/bets', auth, function(req,res,next){
 	Bet.find(function(err, bets){
 		if(err){return next(err); }
 		res.json(bets);

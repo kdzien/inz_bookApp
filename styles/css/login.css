@@ -18,8 +18,18 @@
 #landing-header #welcome #title {
   font-size: 70px;
 }
+@media screen and (max-width: 720px) {
+  #landing-header #welcome #title {
+    font-size: 40px;
+  }
+}
 #landing-header #welcome #subtitle {
   font-size: 32px;
+}
+@media screen and (max-width: 720px) {
+  #landing-header #welcome #subtitle {
+    font-size: 16px;
+  }
 }
 #landing-header #welcome form {
   margin-top: 25px;

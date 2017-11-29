@@ -1,4 +1,5 @@
-<div ng-click="addItem(bet.nazwa)" class="col-md-6 small-bet" ng-repeat="bet in bets">	
+<div style="width:70%;margin:0 auto">
+	<div ng-click="addItem(bet.nazwa)" class="col-md-12 small-bet" ng-repeat="bet in bets">	
 	<div>
 	<img class="cat-img {{bet.category}}" ng-src="./images/{{bet.category}}.png" />
 	<b><i style="color:red" class="fa fa-times" ng-if="checkUser(bet)" aria-hidden="true" ng-click="iksde(bet)"></i>&nbsp;{{bet.nazwa}}</b></div>
@@ -6,3 +7,4 @@
 	<div style="text-align:right">Użytkownik: {{bet.user.name}}</div>
 </div>
 <div class="warning">{{errorMessage}}</div>
+</div>

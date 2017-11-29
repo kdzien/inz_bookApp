@@ -4,6 +4,7 @@ var cheerio = require('cheerio');
 var mongoose = require('mongoose');
 var Events = mongoose.model("Events");
 var Bets = mongoose.model("Bet");
+var Rank = mongoose.model("Rank");
 var Users = mongoose.model("Users");
 url_soccer = 'http://www.mwyniki.pl/';
 url_basketball = 'http://www.mwyniki.pl/koszykowka/';
@@ -12,6 +13,8 @@ url_handball = 'http://www.mwyniki.pl/pilka_reczna/';
 
 
 function getNewEvents(callback){
+	Bets.remove(function(err){
+	})
 	Events.remove(function(err){
 	})
 	getSportsEvents(url_volleyball, "volleyball",".status_type_2",function(result){
@@ -27,6 +30,8 @@ function getNewEvents(callback){
 		sendData(result)
 	});
 }
+
+//odkomentowac do pobrania nowych typow
 // getNewEvents(function(){
 // 	console.log("ready");
 // });
@@ -149,7 +154,7 @@ var findAndUpdate = function(match_name,h,a){
 		})
 	})
 }
-//updateScores();		
+// updateScores();		
 
 
 
@@ -200,4 +205,4 @@ var updateUserRank = function(user){
 	})
 }
 
-//setStats();
+// setStats();

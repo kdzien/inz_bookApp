@@ -27,9 +27,9 @@ var routes = require('./expr_routes/routes.js');
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/baza_inzynierka', {
-  useMongoClient: true,
-});
+// mongoose.connect('mongodb://localhost/baza_inzynierka', {
+//   useMongoClient: true,
+// });
 mongoose.connect('mongodb://heroku_j607f6fk:ub046pqmt6jamj5nhfmnir690s@ds125146.mlab.com:25146/heroku_j607f6fk', {
   useMongoClient: true,
 });

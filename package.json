@@ -1,10 +1,10 @@
 {
-  "name": "inzynierka",
+  "name": "onlywins",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./bin/www"
   },
   "author": "",
   "license": "ISC",
@@ -33,9 +33,7 @@
     "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-ruby-sass": "^2.1.1",
-    "jshint": "^2.9.5"
-  },
-  "devDependencies": {
+    "jshint": "^2.9.5",
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",

@@ -1,111 +1,85 @@
-#landing-header {
-  color: black;
-  font-family: 'Muli', sans-serif;
+#header-landing {
+  background-color: white;
+  font-size: 20px;
+  height: 50px;
+  padding: 10px; }
+  #header-landing img {
+    height: 30px; }
+  #header-landing div {
+    color: black;
+    float: right;
+    cursor: pointer; }
+
+#jtron {
+  height: 450px;
   text-align: center;
-  height: 100%;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../../images/background.jpg");
-}
-#landing-header #welcome {
-  position: relative;
-  top: 50%;
+  background-image: url("../../images/background.jpg"); }
+  #jtron .title {
+    padding-top: 60px;
+    font-size: 36px; }
+
+#register, #login {
+  width: 450px;
+  position: absolute;
+  top: 245px;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-#landing-header #welcome #title {
-  font-size: 70px;
-}
-@media screen and (max-width: 720px) {
-  #landing-header #welcome #title {
-    font-size: 40px;
-  }
-}
-#landing-header #welcome #subtitle {
-  font-size: 32px;
-}
-@media screen and (max-width: 720px) {
-  #landing-header #welcome #subtitle {
-    font-size: 16px;
-  }
-}
-#landing-header #welcome form {
-  margin-top: 25px;
-  width: 50%;
-  text-align: left;
-  color: black;
-}
-#landing-header #welcome form label {
-  margin: 0;
-}
-#landing-header #welcome form button {
-  width: 80%;
-  margin: 0 auto;
-}
+  transform: translate(-50%); }
+  #register form, #login form {
+    width: 100% !important;
+    padding: 15px;
+    padding-top: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: solid 2px #333333;
+    border-radius: 1%; }
+    #register form input, #login form input {
+      background-color: rgba(0, 0, 0, 0.9) !important; }
+    #register form button, #login form button {
+      background-color: #85b80d !important; }
 
-#landing-register {
-  color: white;
-  background: #262626;
-  padding: 60px 0px;
-}
-#landing-register form {
-  padding: 20px 0px;
-  width: 50% !important;
-}
-#landing-register form label {
-  margin: 0;
-}
-#landing-register form input {
-  color: black;
-  background-color: rgba(255, 255, 255, 0.8) !important;
-}
-#landing-register form button {
-  width: 80% !important;
-  margin: 0 auto !important;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.8) !important;
-}
-#landing-register form button:hover {
-  background-color: white !important;
-}
-
-#landing-rest {
+#benefits {
   text-align: center;
-  padding: 60px 0px;
+  height: auto;
+  background-color: white;
   color: black;
-  background: #ECE9E6;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#ECE9E6));
-  background: linear-gradient(to bottom, #FFFFFF, #ECE9E6);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-#landing-rest .row {
-  font-size: 20px;
-  margin: 40px 20px;
-}
-#landing-rest i {
-  color: #262626;
-  font-size: 100px;
-  display: block;
-  margin: 25px 0;
-}
+  padding: 100px 50px; }
+  #benefits .title {
+    font-size: 25px; }
+  #benefits .row {
+    font-size: 20px;
+    margin: 40px 20px; }
+  #benefits i {
+    color: #ef6d00 !important;
+    font-size: 100px;
+    display: block;
+    margin: 25px 0; }
 
-.title {
-  font-size: 40px;
-  text-align: center;
-}
+#login {
+  top: 0;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); }
+  #login form {
+    width: 40% !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    #login form #title {
+      padding: 15px 0px;
+      text-align: center;
+      color: black;
+      font-size: 22px; }
 
-.footer {
-  text-align: center;
-  padding: 10px 0px;
-  background: #262626;
-}
-
-.error {
-  font-weight: bold;
-  text-align: center;
+.closee {
+  position: absolute;
+  top: 5px;
+  right: 5px;
   color: red;
-}
+  font-size: 22px;
+  cursor: pointer; }
+
+/*# sourceMappingURL=maps/login.css.map */

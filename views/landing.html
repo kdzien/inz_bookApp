@@ -1,58 +1,94 @@
-<div id="landing-header">
-	<div id="welcome">
-		<div id="title">betTogether</div>
-		<div id="subtitle">Dziel się typami bukmacherskimi!</div>
-
-		<div id="form-panel">
-			<form>
-				<label>email</label>
-				<input class="form-control" ng-model="user.email"></input>	
-				<label>hasło</label>
-				<input type="password" class="form-control" ng-model="user.password"></input>
-				<div class="error"></div>
-				<button class="form-control"  ng-click="login()">Zaloguj</button>
-			</form>
-		</div>
-	</div>
+<div id="header-landing">
+	<img id="logo" src="./images/logo.png"/>
+	<div ng-click="showLoginModal()">Zaloguj się</div>
+</div>
+<div id="jtron">
+	<div class="title">Dołącz do grona społeczności bukmacherskiej</div>
+	<div class="subtitle">Zarejestruj się już teraz</div>
 </div>
 
-<div id="landing-register">
-	<div class="title">Rejestracja</div>
+<div id="register">
 	<div id="form-panel">
 		<form>
-			<label>nazwa użytkownika*</label>
-			<input class="form-control" ng-model="userRegister.username"></input>	
-			<label>email*</label>
-			<input class="form-control" ng-model="userRegister.email"></input>	
-			<label>hasło*</label>
-			<input type="password" class="form-control" ng-model="userRegister.password"></input>
-			<button class="form-control"  ng-click="register()">Zarejestruj</button>
+			<input class="form-control"  placeholder="Imię"></input>	
+			<input class="form-control" ng-model="userRegister.username" placeholder="nazwa użytkownika*"></input>	
+			<input class="form-control" ng-model="userRegister.email" placeholder="email*"></input>	
+			<input type="password" class="form-control" ng-model="userRegister.password" placeholder="hasło"></input>
+			<input type="date" class="form-control" placeholder="data urodzenia"></input>
+			<button class="form-control"  ng-click="register()">ZAREJESTRUJ</button>
 		</form>
 	</div>
 </div>
 
-<div id="landing-rest">
-	<div class="title">Po co to komu?</div>
+<div id="benefits">
+	<div class="title">Korzystając z aplikacji możesz:</div>
 	<div class="row">
-		<div class="col-md-3">
-		<i class="fa fa-exchange" aria-hidden="true"></i>
-		Wymieniaj się typami bukmacherskimi z innymi użytkownikami aplikacji!
+		<div class="col-md-6">
+		<i class="fa fa-exchange second-color" aria-hidden="true"></i>
+		Wymieniać się typami bukmacherskimi <br> z innymi użytkownikami aplikacji
 		</div>
-		<div class="col-md-3">
-		<i class="fa fa-plus" aria-hidden="true"></i>
-		Dodawaj swoje typy, aby inni mogli z nich korzystać!
+		<div class="col-md-6">
+		<i class="fa fa-plus second-color" aria-hidden="true"></i>
+		Dodawać swoje typy,<br> aby inni mogli z nich korzystać
 		</div>
-		<div class="col-md-3">
-		<i class="fa fa-th-list" aria-hidden="true"></i>
-		Generuj swój kupon na podstawie typów innych użytkowników
+		<div class="col-md-6">
+		<i class="fa fa-th-list second-color" aria-hidden="true"></i>
+		Generować kupon<br> na podstawie typów innych użytkowników
 		</div>
-		<div class="col-md-3">
-		<i class="fa fa-line-chart" aria-hidden="true"></i>
-		Awansuj w rankingu typerów!
+		<div class="col-md-6">
+		<i class="fa fa-line-chart second-color" aria-hidden="true"></i>
+		Awansować w rankingu typerów
+		</div>
+	</div>
+</div>
+
+<div id="login" ng-if="loginModal">
+	<div id="form-panel">
+		<form>
+			<i class="fa fa-times closee" aria-hidden="true" ng-click="showLoginModal()"></i>
+			<div id="title">Logowanie</div>
+			<input class="form-control" ng-model="user.email" placeholder="adres email" style="margin-top:25px;"></input>
+			<input type="password" class="form-control" ng-model="user.password" placeholder="hasło"></input>
+			<div class="error"></div>
+			<button class="form-control"  ng-click="login()">ZALOGUJ</button>
+		</form>
+	</div>
+</div>
+
+<!-- <div id="landing-header">
+	<div id="welcome">
+		<div id="title">betTogether</div>
+		<div id="subtitle">Dziel się typami bukmacherskimi!</div>
+	</div>
+</div>
+
+<div id="landing-register">
+
+	
+</div>
+
+<div id="landing-rest">
+	<div class="title">Korzystając z aplikacji możesz:</div>
+	<div class="row">
+		<div class="col-md-6">
+		<i class="fa fa-exchange second-color" aria-hidden="true"></i>
+		Wymieniać się typami bukmacherskimi <br> z innymi użytkownikami aplikacji
+		</div>
+		<div class="col-md-6">
+		<i class="fa fa-plus second-color" aria-hidden="true"></i>
+		Dodawać swoje typy,<br> aby inni mogli z nich korzystać
+		</div>
+		<div class="col-md-6">
+		<i class="fa fa-th-list second-color" aria-hidden="true"></i>
+		Generować kupon<br> na podstawie typów innych użytkowników
+		</div>
+		<div class="col-md-6">
+		<i class="fa fa-line-chart second-color" aria-hidden="true"></i>
+		Awansować w rankingu typerów
 		</div>
 	</div>
 </div>
 
 <div class="container-fluid footer">
     projekt inżynierski - 2017 Konrad Dzień
-</div>
+</div> --> 

@@ -4,7 +4,11 @@ function($scope,$location,$http,auth,$state,$timeout){
 
 	$scope.user = {};
 	$scope.userRegister = {};
+  $scope.loginModal=false;
 
+  $scope.showLoginModal = function(){
+    $scope.loginModal=!$scope.loginModal;
+  }
   $scope.register = function(){
   	console.log($scope.userRegister);
     auth.register($scope.userRegister).error(function(error){

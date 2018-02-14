@@ -1,24 +1,20 @@
 .rank {
   width: 60%;
-  margin: 0 auto;
-}
-.rank th, .rank tr {
-  text-align: center !important;
-}
+  margin: 0 auto; }
+  .rank th, .rank tr {
+    text-align: center !important; }
 
 .progress {
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-}
+  background-color: rgba(0, 0, 0, 0.1); }
 
 .progress-bar-success {
-  background-color: #77F60F;
-}
+  background-color: #77F60F; }
 
 table tbody tr td {
-  border-top: none !important;
-}
+  border-top: none !important; }
 
 .green {
-  color: #77F60F;
-}
+  color: #77F60F; }
+
+/*# sourceMappingURL=maps/ranking.css.map */

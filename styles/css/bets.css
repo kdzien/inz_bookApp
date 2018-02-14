@@ -2,55 +2,40 @@
   width: 20px;
   position: absolute;
   top: 10;
-  right: 10;
-}
+  right: 10; }
 
 .small-bet {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   margin-bottom: 10px;
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
-  transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
-}
-.small-bet:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-  cursor: pointer;
-}
+  transition: transform 0.2s; }
+  .small-bet:hover {
+    transform: scale(1.02);
+    cursor: pointer; }
 
 .panel {
   width: 70%;
   margin: 0 auto;
   margin-bottom: 10px;
   background-color: initial !important;
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
-  transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
-}
-.panel:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-  cursor: pointer;
-}
+  transition: transform 0.2s; }
+  .panel:hover {
+    transform: scale(1.02);
+    cursor: pointer; }
 
 .panel-default {
   border: none;
-  border-radius: 0;
-}
-.panel-default .panel-heading {
-  border: none;
-  color: white !important;
-  background-color: black;
-  border-radius: 0;
-}
-.panel-default .panel-body {
-  background-color: rgba(0, 0, 0, 0.5);
-  word-wrap: break-word;
-}
-.panel-default .panel-body #info {
-  text-align: center;
-  margin-bottom: 30px;
-}
+  border-radius: 0; }
+  .panel-default .panel-heading {
+    border: none;
+    color: white !important;
+    background-color: black;
+    border-radius: 0; }
+  .panel-default .panel-body {
+    background-color: rgba(0, 0, 0, 0.5);
+    word-wrap: break-word; }
+    .panel-default .panel-body #info {
+      text-align: center;
+      margin-bottom: 30px; }
+
+/*# sourceMappingURL=maps/bets.css.map */

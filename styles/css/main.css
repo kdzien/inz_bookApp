@@ -1,16 +1,16 @@
 body {
   background-color: #262626;
-  color: white;
-}
+  color: white; }
 
 a {
   text-decoration: none;
-  color: white;
-}
-a:hover, a:visited, a:focus {
-  text-decoration: none;
-  color: white;
-}
+  color: white; }
+  a:hover, a:visited, a:focus {
+    text-decoration: none;
+    color: white; }
+
+.on-modal {
+  overflow: hidden; }
 
 #menu-left {
   font-family: 'Maven Pro', sans-serif;
@@ -20,99 +20,75 @@ a:hover, a:visited, a:focus {
   position: fixed;
   display: inline-block;
   height: 100%;
-  width: 210px;
-}
-@media screen and (max-width: 720px) {
-  #menu-left {
-    background-color: black;
-    z-index: 999;
-    width: 100%;
-    position: inherit;
-    height: auto;
-  }
-}
-#menu-left ul {
-  margin-bottom: 0;
-  padding: 0;
-  padding: 10px;
-}
-@media screen and (max-width: 720px) {
+  width: 210px; }
+  @media screen and (max-width: 720px) {
+    #menu-left {
+      background-color: black;
+      z-index: 999;
+      width: 100%;
+      position: inherit;
+      height: auto; } }
   #menu-left ul {
-    padding: 0px;
-    text-align: center;
-  }
-}
-#menu-left ul li {
-  padding-top: 10px;
-  list-style-type: none;
-  font-size: 16px;
-  opacity: 0.5;
-}
-#menu-left ul li:last-child {
-  padding-bottom: 10px;
-}
-@media screen and (max-width: 720px) {
-  #menu-left ul li:last-child {
-    padding-bottom: 0px;
-  }
-}
-#menu-left ul li:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-#menu-left #user {
-  border-top: solid 1px white;
-  width: 170px;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  font-size: 18px;
-}
-@media screen and (max-width: 720px) {
+    margin-bottom: 0;
+    padding: 0;
+    padding: 10px; }
+    @media screen and (max-width: 720px) {
+      #menu-left ul {
+        padding: 0px;
+        text-align: center; } }
+    #menu-left ul li {
+      padding-top: 10px;
+      list-style-type: none;
+      font-size: 16px;
+      opacity: 0.5; }
+      #menu-left ul li:last-child {
+        padding-bottom: 10px; }
+        @media screen and (max-width: 720px) {
+          #menu-left ul li:last-child {
+            padding-bottom: 0px; } }
+      #menu-left ul li:hover {
+        opacity: 1;
+        cursor: pointer; }
   #menu-left #user {
-    position: inherit;
-    border-top: none;
-    text-align: center;
-    margin: 0 auto;
-  }
-}
-#menu-left #user span i {
-  font-size: 18px;
-  padding-right: 20px;
-}
-#menu-left #user span:hover {
-  cursor: pointer;
-}
+    border-top: solid 1px white;
+    width: 170px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    font-size: 18px; }
+    @media screen and (max-width: 720px) {
+      #menu-left #user {
+        position: inherit;
+        border-top: none;
+        text-align: center;
+        margin: 0 auto; } }
+    #menu-left #user span i {
+      font-size: 18px;
+      padding-right: 20px; }
+    #menu-left #user span:hover {
+      cursor: pointer; }
 
 #content-right {
   overflow: auto;
   padding-left: 210px;
-  height: 100%;
-}
-@media screen and (max-width: 720px) {
-  #content-right {
-    padding-left: 0px;
-    overflow: none;
-  }
-}
-#content-right #main-content {
-  padding: 20px;
-}
+  height: 100%; }
+  @media screen and (max-width: 720px) {
+    #content-right {
+      padding-left: 0px;
+      overflow: none; } }
+  #content-right #main-content {
+    padding: 20px; }
 
 .currentPage {
-  opacity: 1 !important;
-}
+  opacity: 1 !important; }
 
 .fixed-margin {
   float: none;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 #cupon-list {
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
   padding: 20px;
   font-family: 'Maven Pro', sans-serif;
   color: white;
@@ -121,150 +97,81 @@ a:hover, a:visited, a:focus {
   width: 300px;
   height: 100%;
   right: -300px;
-  top: 0;
-}
-#cupon-list #header {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-#cupon-list .cupon-element {
-  margin-bottom: 5px;
-  font-size: 15px;
-}
-#cupon-list .cupon-element i {
-  padding-right: 5px;
-  color: red;
-  cursor: pointer;
-}
-#cupon-list #savePanel {
-  color: red;
-  position: fixed;
-  bottom: 0;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  padding: 10px;
-}
-#cupon-list #savePanel i {
-  color: white;
-  cursor: pointer;
-  font-size: 30px;
-}
-#cupon-list #savePanel i:first-child {
-  padding-right: 20px;
-}
-#cupon-list #hide-button {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  left: -25px;
-  width: 50px;
-  height: 50px;
-  background-color: black;
-}
-#cupon-list #hide-button i {
-  font-size: 25px;
-  padding: 14px 10px 14px 15px;
-}
-#cupon-list #hide-button:hover {
-  cursor: pointer;
-}
-#cupon-list .cupon-warning {
-  text-align: center;
-  display: none;
-  color: #f9ec25;
-}
-
-@-webkit-keyframes slideLeft {
-  from {
-    right: -300px;
-  }
-  to {
-    right: 0px;
-  }
-}
+  top: 0; }
+  #cupon-list #header {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px; }
+  #cupon-list .cupon-element {
+    margin-bottom: 5px;
+    font-size: 15px; }
+    #cupon-list .cupon-element i {
+      padding-right: 5px;
+      color: red;
+      cursor: pointer; }
+  #cupon-list #savePanel {
+    color: red;
+    position: fixed;
+    bottom: 0;
+    transform: translateX(100%);
+    padding: 10px; }
+    #cupon-list #savePanel i {
+      color: white;
+      cursor: pointer;
+      font-size: 30px; }
+      #cupon-list #savePanel i:first-child {
+        padding-right: 20px; }
+  #cupon-list #hide-button {
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+    left: -25px;
+    width: 50px;
+    height: 50px;
+    background-color: black; }
+    #cupon-list #hide-button i {
+      font-size: 25px;
+      padding: 14px 10px 14px 15px; }
+    #cupon-list #hide-button:hover {
+      cursor: pointer; }
+  #cupon-list .cupon-warning {
+    text-align: center;
+    display: none;
+    color: #f9ec25; }
 
 @keyframes slideLeft {
   from {
-    right: -300px;
-  }
+    right: -300px; }
   to {
-    right: 0px;
-  }
-}
-@-webkit-keyframes slideRight {
-  from {
-    right: 0px;
-  }
-  to {
-    right: -300px;
-  }
-}
+    right: 0px; } }
+
 @keyframes slideRight {
   from {
-    right: 0px;
-  }
+    right: 0px; }
   to {
-    right: -300px;
-  }
-}
-@-webkit-keyframes shake {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  25% {
-    -webkit-transform: rotate(40deg);
-            transform: rotate(40deg);
-  }
-  50% {
-    -webkit-transform: rotate(-40deg);
-            transform: rotate(-40deg);
-  }
-  75% {
-    -webkit-transform: rotate(20deg);
-            transform: rotate(20deg);
-  }
-  100% {
-    -webkit-transform: rotate(-20deg);
-            transform: rotate(-20deg);
-  }
-}
+    right: -300px; } }
+
 @keyframes shake {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
+    transform: rotate(0deg); }
   25% {
-    -webkit-transform: rotate(40deg);
-            transform: rotate(40deg);
-  }
+    transform: rotate(40deg); }
   50% {
-    -webkit-transform: rotate(-40deg);
-            transform: rotate(-40deg);
-  }
+    transform: rotate(-40deg); }
   75% {
-    -webkit-transform: rotate(20deg);
-            transform: rotate(20deg);
-  }
+    transform: rotate(20deg); }
   100% {
-    -webkit-transform: rotate(-20deg);
-            transform: rotate(-20deg);
-  }
-}
+    transform: rotate(-20deg); } }
+
 .shake-animation {
-  -webkit-animation-name: shake;
-          animation-name: shake;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-}
+  animation-name: shake;
+  animation-duration: 0.2s; }
 
 .warning {
   text-align: center;
-  color: #f9ec25;
-}
+  color: #f9ec25; }
 
 .warning-center {
-  position: relative;
-}
+  position: relative; }
+
+/*# sourceMappingURL=maps/main.css.map */

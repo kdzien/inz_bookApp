@@ -108,6 +108,8 @@ router.get('/cupon/:user', function(req,res,next){
 router.post('/cupon/:user',function(req,res,next){
 	Cupon.findOne({'user':req.params.user}).populate('user').exec(function(err,cupon){
 		cupon.updateC(req.body,function(err,post){
+			if(err){return next(err);}
+			res.json("kupon zapisany")
 		})
 	})
 })

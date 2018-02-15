@@ -1,3 +1,4 @@
+@import 'variables.scss';
 //domieszki
 @mixin remove-padding(){
 	padding:0;
@@ -16,7 +17,7 @@
 	}
 }
 
-@mixin sport-icon($color){
+@mixin sport-icon($color,$radius){
 	background-color:$color;
-	border-radius:50%;
+	border-radius:$radius;
 }

@@ -9,21 +9,21 @@
       margin-right: 0px; }
 
 #form-panel {
-  color: white !important; }
+  color: black !important; }
   #form-panel form {
     margin: 0 auto;
-    width: 60%; }
+    width: 600px; }
     #form-panel form select, #form-panel form input, #form-panel form textarea, #form-panel form button {
       width: 100%;
       border-radius: 0;
       border: none;
-      background-color: rgba(0, 0, 0, 0.5); }
+      background-color: #242a2f; }
       #form-panel form select option, #form-panel form input option, #form-panel form textarea option, #form-panel form button option {
-        background-color: rgba(0, 0, 0, 0.5); }
+        background-color: #667786; }
       #form-panel form select *:not(button):focus, #form-panel form input *:not(button):focus, #form-panel form textarea *:not(button):focus, #form-panel form button *:not(button):focus {
         box-shadow: 0px -1px 5px 2px #ef6d00; }
     #form-panel form button:hover {
-      background-color: black; }
+      background-color: #242a2f; }
     #form-panel form textarea {
       height: 100px; }
     #form-panel form > * {
@@ -50,6 +50,22 @@
 .volleyball {
   background-color: #e3f12e;
   border-radius: 50%; }
+
+.basketball-background {
+  background-color: #c37e00;
+  border-radius: 0%; }
+
+.soccer-background {
+  background-color: white;
+  border-radius: 0%; }
+
+.handball-background {
+  background-color: #3277FF;
+  border-radius: 0%; }
+
+.volleyball-background {
+  background-color: #e3f12e;
+  border-radius: 0%; }
 
 .checkboxed {
   text-align: center; }

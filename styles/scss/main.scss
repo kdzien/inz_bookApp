@@ -4,7 +4,6 @@
 
 
 body{
-	background-color:#262626;
 	color:white;
 }
 a{
@@ -20,11 +19,9 @@ a{
 }
 #menu-left{
 	font-family: 'Maven Pro', sans-serif;
-	font-weight:bold;
-	padding:$head-padding;
-	background-color:$transparent-black;
+	background-color:$foreground-color;
 	@media screen and (max-width: 720px) {
-	    background-color:black;
+	    background-color:$foreground-color;
 	    z-index:999;
 	    width:100%;
 	    position:inherit;
@@ -33,50 +30,67 @@ a{
 	position:fixed;
 	display:inline-block;
 	height:100%;
-	width:210px;
+	width:300px;
 	ul{
-		margin-bottom:0;
-		@include remove-padding();
-		padding:10px;
+		svg{
+			margin-right:15px;
+		}
+		padding:0px !important;
 		@media screen and (max-width: 720px) {
-	    	padding:0px;
 	    	text-align:center;
-  		}
-		// @include custom-border(1px,$transparent-white,topbottom);
+		  }
 		li{
-			
-			padding-top:$elements-padding;
-			list-style-type:none;
-			font-size:16px;
-			opacity:0.5;
-			&:last-child{
-				padding-bottom:$elements-padding;
-				@media screen and (max-width: 720px) {
-	    			padding-bottom:0px;
-  				}
-			}		
-			&:hover{
-				opacity:1;
-				cursor:pointer;
+		list-style-type:none;
+		font-size:18px;
+		padding: 3px 30px;
+		&:nth-child(2){
+			padding:0;
+			padding-bottom:5px;
+		}
+		&:nth-child(3):hover,&:nth-child(4):hover{
+			background-color:$foreground-second-color;
+			cursor:pointer;
+		}
+		&:nth-child(4){
+			svg{
+				margin-right:13px;
 			}
 		}
+		}
+		.menu{
+			font-size:13px !important;
+			font-weight:bold;
+			padding-bottom:10px;
+			color:#727272
+		}
+		.inside{
+			li{
+				font-size:18px;
+				padding:3px 40px;
+				&:hover{
+					background-color:$foreground-second-color;
+					cursor:pointer;
+				}
+			}
+		}
+
 	}
 	#user{
-		@include custom-border(1px,$second-color,top);
+		padding:15px;
+		margin-bottom:15px;
 		@media screen and (max-width: 720px) {
 	    	position:inherit;
 	    	border-top:none;
 	    	text-align:center;
-	    	margin:0 auto;
   		}
 		width:170px;
-		padding:$elements-padding;
-		position:fixed;
-		bottom:0;
+		padding-bottom:$elements-padding;
 		font-size:18px;
 		span{
+			margin-right:15px;
 			i{
 				font-size:18px;
+				margin-right:15px;
 				padding-right:$head-padding;
 			}
 			&:hover{
@@ -85,6 +99,21 @@ a{
 		}
 		
 	}
+	#logout{
+		@media screen and (max-width: 720px) {
+	    	position:initial;
+		}
+		position:absolute;
+		bottom:0;
+		left:0;
+		text-align:center;
+		font-size:25px;
+		letter-spacing:1px;
+		width:100%;
+		padding:15px 0px;
+		background-color:$foreground-second-color;
+		cursor:pointer;
+	}
 }
 #content-right{
 	@media screen and (max-width: 720px) {
@@ -92,14 +121,14 @@ a{
 	    overflow:none;
   	}
 	overflow:auto;
-	padding-left:210px;
+	padding-left:300px;
 	height:100%;
 	#main-content{
 		padding:20px;
 	}
 }
 .currentPage{
-	opacity:1 !important;
+	background-color:$foreground-second-color;
 }
 .fixed-margin{
 	float:none;
@@ -109,11 +138,19 @@ a{
 	animation-duration:0.5s;
 	animation-fill-mode:forwards;
 	padding:20px;
+	padding-top: 80px;
 	font-family: 'Maven Pro', sans-serif;
 	#header{
+		position:absolute;
+		top:0;
+		right:0;
 		text-align:center;
-		font-size:20px;
-		margin-bottom:15px;
+		font-size:25px;
+		letter-spacing:1px;
+		width:100%;
+		padding:15px 0px;
+		background-color:$foreground-second-color;
+		cursor:pointer;
 	}
 	.cupon-element{
 		margin-bottom:5px;
@@ -125,22 +162,24 @@ a{
 		}
 	}
 	#savePanel{
-		color:red;
-		position:fixed;
+		transform: translateX(-50%);
+		left: 50%;
+		position: absolute;
+		color:white;
 		bottom:0;
-		transform:translateX(100%);
 		padding:10px;
-		i{
-			color:white;
+		font-size:30px;
+		div{
 			cursor:pointer;
-			font-size:30px;
-		&:first-child{
-			padding-right:20px;
+			display:inline-block;
+			&:hover{
+				color:$foreground-second-color;
+			}
 		}
-		}
+
 	}
 	color:white;
-	background-color:black;
+	background-color:$foreground-color;
     position: fixed;
     width: 300px;
     height: 100%;
@@ -153,11 +192,12 @@ a{
     	left:-25px;
     	width:50px;
     	height:50px;
-    	background-color:black;
-    	i{	
-    		font-size:25px;
-    		padding:14px 10px 14px 15px;
-    	}
+		background-color:$foreground-color;
+		font-size:25px;
+    	#hbx{
+			font-size:25px;
+			padding:14px 10px 14px 15px;
+		}
     	&:hover{
     		cursor:pointer;
     	}
@@ -199,7 +239,8 @@ a{
 }
 .warning{
 	text-align:center;
-	color:#f9ec25;
+	color:#ffb414;
+	font-weight:bold;
 }
 .warning-center{
 	position:relative;

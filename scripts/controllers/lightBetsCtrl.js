@@ -9,7 +9,6 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 	function getData(){
 		$http.get("/bets/light").success(function(data) {
 			$scope.bets = data;
-			console.log($scope.bets)
 		});		
 	}
 	getData();
@@ -20,10 +19,11 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 			$timeout(function(){
 				warning.style.display="none";
 			},1500)
+		}else{
+			console.log(obj)
 		};
 	}
 	$scope.iksde = function(obj){
-		console.log(obj)
 		$http.delete("/bets/"+obj._id).success(function(data) {
 			$scope.errorMessage=data;
 			$timeout(function(){

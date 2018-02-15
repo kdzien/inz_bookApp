@@ -4,21 +4,17 @@ function(auth,$http,$timeout){
 
 	var kupon = new Array();
 
-	$http.get("/cupon/"+auth.currentUser()._id).success(function(data){
-		kupon=data.matches;
-	})
 
-	var getKupon = function(){
-		console.log(kupon)
-		return kupon
+
+	var getKupon = function(callback){
+		$http.get("/cupon/"+auth.currentUser()._id).success(function(data){
+			kupon=data.matches;
+			callback(kupon)
+		})
 	}
 	var addMecz = function(mecz){
 		var exist = checkMecz(mecz);
 		if(exist==true){
-			document.getElementById("hbx").style.transform="rotateX(360deg)";
-			$timeout(function(){
-				document.getElementById("hbx").style.transform="none";
-			},400)
 			kupon.push(mecz);	
 			return 0;
 		}
@@ -36,16 +32,22 @@ function(auth,$http,$timeout){
 		return false;
 	}
 
-	var saveCupon = function(){
-		$http.post("/cupon/"+auth.currentUser()._id,kupon).success(function(data) {
-		});
+	var saveCupon = function(callback){
+		console.log(auth.currentUser())
+		$http.post("/cupon/"+auth.currentUser()._id,kupon).then(function(response){
+			callback(response)		
+		},function(response){
+			console.log(response)
+		})
+		// $http.post("/cupon/"+auth.currentUser()._id,kupon).success(function(data) {
+		// 	console.log(kupon)
+		// 	callback("gitara")
+		// });
 	}
 
-	var removeCupon = function(){
+	var removeCupon = function(callback){
 		$http.delete("/cupon/"+auth.currentUser()._id).success(function(data) {
-			$http.get("/cupon/"+auth.currentUser()._id).success(function(data){
-				kupon=data.matches;
-			})
+			kupon = new Array()
 		});
 
 	}

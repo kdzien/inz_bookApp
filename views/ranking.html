@@ -1,10 +1,45 @@
-<div class="rank">
+
 <div id="form-panel">
 	<form>
 		<input placeholder="wyszukaj" class="form-control" ng-model="userSearch"></input>
 	</form>
 </div>
-	<div class="table-responsive">
+<div id="rank-wrapper">
+	<div class="row rank "  >
+		<div class="col-md-3">
+			Użytkownik
+		</div>
+		<div class="col-md-3">
+			Liczba typów
+		</div>
+		<div class="col-md-3">
+			Trafione typy
+		</div>
+		<div class="col-md-3">
+			Progres
+		</div>
+	</div>
+	<div class="row rank" ng-repeat="stat in stats | orderBy:'-rank/betCount' | filter: userSearch  track by $index" ng-if="stat.betCount > 0" ng-class='{green : stat.user.name==currentUser}'>
+		<div class="col-md-3">
+			{{stat.user.name}}
+		</div>
+		<div class="col-md-3">
+			{{stat.betCount}}
+		</div>
+		<div class="col-md-3">
+			{{stat.rank}}
+		</div>
+		<div class="col-md-3">
+			<div class="progress">
+				<div class="progress-bar progress-bar-success" role="progressbar" style="width:{{getPercentage(stat)[0]}}%">
+				</div>
+			</div>
+		</div>
+	</div>
+			
+</div>
+
+<!-- <div class="table-responsive">
 	<table class="table">
 		<thead>
 			<tr>
@@ -15,7 +50,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="stat in stats | orderBy:'-rank/betCount' | filter: userSearch  track by $index" ng-if="stat.betCount > 0" ng-class='{green : stat.user.name==currentUser}'>
+			<tr >
 				<td>{{stat.user.name}}</td>
 				<td>{{stat.betCount}}</td>
 				<td>{{stat.rank}}</td>
@@ -29,4 +64,4 @@
 		</tbody>
 	</table>
 	</div>
-</div>
+</div> -->

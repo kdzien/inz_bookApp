@@ -4,11 +4,12 @@ angular.module('betApp').controller('mainCtrl', [
 function($scope,$location,cuponFactory,auth,$timeout){
 
 	$scope.currentUser=auth.currentUser().name;
-	console.log($scope.currentUser)
+	$scope.saveMessage= ""
 	
-	$timeout(function(){
-		$scope.kupony = cuponFactory.getKupon();
-	},100)
+
+	cuponFactory.getKupon(function(cupon){
+		$scope.kupony=cupon;
+	});
 
 	var isListHide=true;
 	$scope.isActive = function (viewLocation) {
@@ -33,10 +34,17 @@ function($scope,$location,cuponFactory,auth,$timeout){
 	$scope.logout = function(){
 		auth.logOut();
 	}
-	$scope.save=function(){
-		cuponFactory.saveCupon();
+	$scope.saveC=function(){
+		cuponFactory.saveCupon(function(message){
+			$scope.saveMessage=message.data
+			$timeout(function(){
+				$scope.saveMessage=""
+			},1500)
+		});
 	}
-	$scope.delete=function(){
-		cuponFactory.removeCupon();
+	$scope.deleteC=function(){
+		cuponFactory.removeCupon(()=>{
+			$scope.kupony = cuponFactory.getKupon();
+		});
 	}
 }]);

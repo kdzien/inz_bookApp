@@ -1,17 +1,25 @@
-	<div id="menu-left">
-	<ul>
-		<li ng-class="{currentPage: isActive('/main/descriptionbets')}"><a ui-sref="main.descBets" >Typy z analizą</a></li>
-		<li ng-class="{currentPage: isActive('/main/lightbets')}"><a ui-sref="main.lightBets" >Luźne typy</a></li>
-	</ul>
-	<ul>
-		<li ng-class="{currentPage: isActive('/main/addbet')}"><a ui-sref="main.addBet" >Dodaj typ</a></li>
-	</ul>
-	<ul>
-		<li ng-class="{currentPage: isActive('/main/ranking')}"><a ui-sref="main.ranking" >Ranking</a></li>
-	</ul>
+<div id="menu-left">
 	<div id="user">
-		<span><i class="fa fa-user-o" aria-hidden="true" ng-click="logout()"></i>{{currentUser}}</span>
+		<span><i class="far fa-user-circle" aria-hidden="true"></i></span>{{currentUser}}
 	</div>
+	<ul >
+		<li class="menu">
+			TYPY
+		</li>
+		<li>
+			<ul class="inside">
+				<li ui-sref="main.descBets" ng-class="{currentPage: isActive('/main/descriptionbets')}"><i class="fas fa-map"></i>z analizą</li>
+				<li ui-sref="main.lightBets" ng-class="{currentPage: isActive('/main/lightbets')}"><i class="far fa-map"></i>bez analizy</li>
+			</ul>
+		</li>
+		<li  ui-sref="main.addBet"  ng-class="{currentPage: isActive('/main/addbet')}">
+				<i class="far fa-plus-square"></i>Dodaj typ
+		</li>
+		<li  ui-sref="main.ranking" ng-class="{currentPage: isActive('/main/ranking')}">
+				<i class="fas fa-chart-line"></i>Ranking użytkowników
+		</li>
+	</ul>  
+	<div id="logout"  ng-click="logout()">WYLOGUJ</div>
 </div>
 
 <div id="content-right" >
@@ -23,10 +31,17 @@
 </div>  
 
 <div id="cupon-list">
-	<div id="header">Twój kupon:</div>
-	<div class="cupon-element" ng-click="removeElement(item);" ng-repeat="item in kupony"><i class="fa fa-times" aria-hidden="true"></i>{{item}}</div>
-	<div class="cupon-warning">Mecz istnieje juz na kuponie</div>
-	<div id="savePanel"><i class="fa fa-floppy-o" aria-hidden="true" ng-click="save()"></i><i class="fa fa-times" aria-hidden="true" ng-click="delete()"></i></div>
-	<div id="hide-button" ng-click="runPanel($event)"><i id="hbx" style="transition: transform 0.5s" class="fa fa-bars hb" aria-hidden="true"></i></div>
-
+	<div id="header">TWÓJ KUPON:</div>
+	<div class="cupon-element" ng-click="removeElement(item);" ng-repeat="item in kupony"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;{{item}}</div>
+	<div class="cupon-warning">Mecz istnieje juz na kuponie</div>	
+	<div style="color:rgb(126, 204, 0);text-align:center">{{saveMessage}}</div>
+	<div id="savePanel">
+		<div ng-click="saveC()"><i class="far fa-save" aria-hidden="true"></i></div>
+		<!-- <div ng-click="deleteC()"><i class="fas fa-trash-alt" aria-hidden="true" ></i></div> -->
+	</div>
+	<div id="hide-button" ng-click="runPanel($event)">
+		<div id="hbx">
+			<i  style="transition: transform 0.5s" class="fas fa-align-justify" aria-hidden="true"></i>
+		</div>
+	</div>
 </div>

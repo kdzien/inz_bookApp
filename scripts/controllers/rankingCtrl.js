@@ -7,7 +7,6 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 	$scope.currentUser=auth.currentUser().name;
 	$http.get("/rank").success(function(data) {
 		$scope.stats = data;
-		console.log($scope.stats);
 	});
 
 	$scope.getPercentage = function(item){

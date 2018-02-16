@@ -11,49 +11,92 @@
     cursor: pointer; }
 
 #jtron {
-  height: 450px;
+  height: 650px;
   text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../../images/background.jpg"); }
   #jtron .title {
-    padding-top: 60px;
+    padding-top: 90px;
     font-size: 36px; }
 
 #register, #login {
-  width: 450px;
+  width: 500px;
   position: absolute;
-  top: 245px;
   left: 50%;
   transform: translate(-50%); }
   #register form, #login form {
     width: 100% !important;
-    padding: 15px;
+    padding: 25px;
     padding-top: 25px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: solid 2px #333333;
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 1%; }
     #register form input, #login form input {
-      background-color: rgba(0, 0, 0, 0.9) !important; }
+      background-color: white !important;
+      margin-bottom: 20px;
+      color: black; }
     #register form button, #login form button {
       background-color: #85b80d !important; }
+    #register form #title, #login form #title {
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 40px; }
 
-#benefits {
+#register {
+  top: 303px; }
+
+#login {
+  top: 245px; }
+
+#rules {
   text-align: center;
   height: auto;
-  background-color: white;
   color: black;
-  padding: 100px 50px; }
-  #benefits .title {
-    font-size: 25px; }
-  #benefits .row {
+  margin-top: 150px; }
+  #rules .row {
     font-size: 20px;
-    margin: 40px 20px; }
-  #benefits i {
-    color: #ef6d00 !important;
-    font-size: 100px;
+    margin: 60px 20px;
+    display: flex; }
+    #rules .row:last-child {
+      margin-bottom: 90px; }
+  #rules img {
+    width: 320px; }
+  #rules .text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+  #rules #title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 100px; }
+
+#benefits {
+  height: auto;
+  padding: 100px 50px;
+  background-color: #262d35; }
+  #benefits #title {
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 100px; }
+  #benefits .th-head {
+    color: #fb7200;
+    font-size: 110px;
+    width: 110px;
     display: block;
-    margin: 25px 0; }
+    margin: 0 auto;
+    margin-bottom: 40px; }
+  #benefits .th-text {
+    margin: 0 auto;
+    width: 250px;
+    font-size: 18px;
+    text-align: center; }
+  #benefits [class*='col-'] {
+    margin-bottom: 40px; }
+
+.col-sm-offset-right-2 {
+  margin-right: 16.66666667%; }
 
 #login {
   top: 0;
@@ -63,6 +106,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6); }
   #login form {
+    background-color: #2e3338 !important;
     width: 40% !important;
     position: absolute;
     top: 50%;
@@ -71,7 +115,7 @@
     #login form #title {
       padding: 15px 0px;
       text-align: center;
-      color: black;
+      color: white;
       font-size: 22px; }
 
 .closee {

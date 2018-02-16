@@ -7,10 +7,10 @@ function($scope,$location,$http,auth,$state,$timeout){
   $scope.loginModal=false;
 
   $scope.showLoginModal = function(){
+    console.log("clicked")
     $scope.loginModal=!$scope.loginModal;
   }
   $scope.register = function(){
-  	console.log($scope.userRegister);
     auth.register($scope.userRegister).error(function(error){
       $scope.error = error;
     }).then(function(){
@@ -21,7 +21,6 @@ function($scope,$location,$http,auth,$state,$timeout){
   $scope.login = function(){
 
     auth.logIn($scope.user).error(function(error){
-      console.log(error.message);
       var errorx = document.querySelector('.error');
       errorx.innerHTML=error.message;
       $timeout(function(){

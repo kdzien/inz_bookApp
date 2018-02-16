@@ -10,6 +10,7 @@
 <div id="register">
 	<div id="form-panel">
 		<form>
+			<div id="title">REJESTRACJA</div>
 			<input class="form-control"  placeholder="Imię"></input>	
 			<input class="form-control" ng-model="userRegister.username" placeholder="nazwa użytkownika*"></input>	
 			<input class="form-control" ng-model="userRegister.email" placeholder="email*"></input>	
@@ -20,33 +21,66 @@
 	</div>
 </div>
 
-<div id="benefits">
-	<div class="title">Korzystając z aplikacji możesz:</div>
+<div id="rules">
 	<div class="row">
 		<div class="col-md-6">
-		<i class="fa fa-exchange second-color" aria-hidden="true"></i>
-		Wymieniać się typami bukmacherskimi <br> z innymi użytkownikami aplikacji
+			<img src="./images/1.jpg">
 		</div>
-		<div class="col-md-6">
-		<i class="fa fa-plus second-color" aria-hidden="true"></i>
-		Dodawać swoje typy,<br> aby inni mogli z nich korzystać
-		</div>
-		<div class="col-md-6">
-		<i class="fa fa-th-list second-color" aria-hidden="true"></i>
-		Generować kupon<br> na podstawie typów innych użytkowników
-		</div>
-		<div class="col-md-6">
-		<i class="fa fa-line-chart second-color" aria-hidden="true"></i>
-		Awansować w rankingu typerów
+		<div class="col-md-6 ">
+			<div class="text">Korzystasz z przestarzałych forum i stron internetowych z typami bukmacherskimi?</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-md-6 ">
+				<div class="text">Cały czas sam analizujesz dane sportowe, aby znaleźć interesujące typy?</div>
+		</div>
+		<div class="col-md-6">
+			<img src="./images/2.jpg">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<img src="./images/3.jpg">
+		</div>
+		<div class="col-md-6 ">
+				<div class="text">Obstawiasz "pewniaczki" licząc, że tym razem na 100% się wzbogacisz?</div>
+		</div>
+	</div>
+	<div id="title">Ta aplikacja jest dla Ciebie!</div>
+</div>
+<div id="benefits">
+	<div id="title">Korzystając z aplikacji możesz:</div>
+<div class="row">
+	<div class="col-md-4">
+		<div class="th-head"><i class="fas fa-exchange-alt"></i></div>
+		<div class="th-text">Wymieniać się typami bukmacherskimi z innymi użytkownikami</div>
+	</div>
+	<div class="col-md-4">
+		<div class="th-head"><i class="fas fa-map"></i></div>
+		<div class="th-text">Dodawać typy bez analizy, lub te poparte danymi czy statystykami</div>
+	</div>
+	<div class="col-md-4">
+		<div class="th-head"><i class="fas fa-chart-line"></i></div>
+		<div class="th-text">Awansować w rankingu użytkowników, który generowany jest automatycznie</div>
+	</div>
+	<div class="col-md-4 col-md-offset-2">
+		<div class="th-head"><i class="fas fa-download"></i></div>
+		<div class="th-text">Wybierać wydarzenia pobierane z zewnętrznego źródła</div>
+
+	</div>
+	<div class="col-md-4 col-md-offset-right-2">
+		<div class="th-head"><i class="far fa-list-alt"></i></div>
+		<div class="th-text">Generować wirtualny kupon na podstawie typów użytkowników.</div>
+	</div>
+</div>
+
 </div>
 
 <div id="login" ng-if="loginModal">
 	<div id="form-panel">
 		<form>
-			<i class="fa fa-times closee" aria-hidden="true" ng-click="showLoginModal()"></i>
-			<div id="title">Logowanie</div>
+			<div id="title">LOGOWANIE</div>
+			<div ng-click="showLoginModal()"><i class="fa fa-times closee" aria-hidden="true" ></i></div>
 			<input class="form-control" ng-model="user.email" placeholder="adres email" style="margin-top:25px;"></input>
 			<input type="password" class="form-control" ng-model="user.password" placeholder="hasło"></input>
 			<div class="error"></div>

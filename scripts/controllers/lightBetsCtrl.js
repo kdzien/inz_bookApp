@@ -20,7 +20,6 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 				warning.style.display="none";
 			},1500)
 		}else{
-			console.log(obj)
 		};
 	}
 	$scope.iksde = function(obj){

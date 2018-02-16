@@ -85,7 +85,9 @@ router.post('/bets/', function(req,res,next){
 router.get('/events', function(req, res){
 	var currentDate = new Date();
 	var stringDate =currentDate.getHours()+":"+currentDate.getMinutes();
+	if(stringDate[0]!="1"||stringDate[0]!="2"){stringDate="0"+stringDate}
 	Events.find({"time": { $gte: stringDate}},function(err, events){
+		console.log(events)
 		if(err){return next(err); }
 		res.json(events);
 	});

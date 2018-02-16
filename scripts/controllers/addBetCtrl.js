@@ -8,7 +8,6 @@ function($scope,$location,$http,auth,$timeout){
 	$scope.errorMessage=""
 
 	$http.get("/events").success(function(data) {
-		console.log(data);
 		var all=[]
 		for(var i=0;i<=data.length-1;i++){
 			var league = {sport:data[i].discipline,league:data[i].league,matches:[]}
@@ -28,7 +27,6 @@ function($scope,$location,$http,auth,$timeout){
 				}
 			}
 		}
-		//console.log($scope.events);
 		$scope.allE=all;
 	});
 

@@ -206,4 +206,20 @@ a {
 .warning-center {
   position: relative; }
 
+@media screen and (max-width: 720px) {
+  .ph-show {
+    display: block !important; } }
+
+@media screen and (min-width: 720px) {
+  .ph-show {
+    display: none !important; } }
+
+@media screen and (max-width: 720px) {
+  .ph-hide {
+    display: none !important; } }
+
+@media screen and (min-width: 720px) {
+  .ph-hide {
+    display: flex !important; } }
+
 /*# sourceMappingURL=maps/main.css.map */

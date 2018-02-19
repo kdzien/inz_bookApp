@@ -10,9 +10,12 @@ function($scope,$location,$http,auth,$state,$timeout){
     console.log("clicked")
     $scope.loginModal=!$scope.loginModal;
   }
-  $scope.register = function(){
+  $scope.register = function(callback){
     auth.register($scope.userRegister).error(function(error){
-      $scope.error = error;
+      $scope.errors = error;
+      $timeout(()=>{
+        $scope.errors = []  
+      },2000)
     }).then(function(){
       $state.go('main.descBets');
     });

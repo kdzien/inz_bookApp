@@ -13,6 +13,9 @@
   #form-panel form {
     margin: 0 auto;
     width: 600px; }
+    @media screen and (max-width: 720px) {
+      #form-panel form {
+        width: auto; } }
     #form-panel form select, #form-panel form input, #form-panel form textarea, #form-panel form button {
       width: 100%;
       border-radius: 0;

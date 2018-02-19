@@ -8,6 +8,7 @@ var Bet = mongoose.model("Bet");
 var Cupon = mongoose.model("Cupons");
 var Events = mongoose.model("Events");
 var Rank = mongoose.model("Rank");
+var validator = require('validator');
 
 var jwt = require('express-jwt');
 var auth = jwt({
@@ -144,33 +145,56 @@ router.delete('/bets/:id',function(req,res,next){
 
 //logowanie-rejestracja
 router.post('/register', function(req,res){
-	var user = new User();
-	user.name = req.body.username;
-	user.email = req.body.email;
-	var password = req.body.password;
-	user.setPassword(password);
-	user.save(function(err,user){
-		var cupon = new Cupon();
-		cupon.user=user._id;
-		cupon.matches=[];
-		cupon.date=new Date();
-		cupon.save(function(err,cupon){
-			if(err){return next(err);}
-			var rank = new Rank();
-			rank.user=user._id;
-			rank.save(function(err,rank){
-				var token;
-				token=user.generateJwt();
-				res.status(200);
-		    	res.json({
-		      		"token" : token
-		    	});				
+	var errors = [];
+	User.findOne({ name: req.body.username }, function (err, user) {
+		if(!user){
+			User.findOne({ email: req.body.email }, function (err, userx) {
+				if(!userx){
+					if(!validator.isEmail(req.body.email)){
+						errors.push("niepoprawny adres email")
+					}
+					if (errors.length!=0) {
+						res.status(403).send(errors);
+					}
+					else{
+						var user = new User();
+						user.name = req.body.username;
+						user.email = req.body.email;
+						var password = req.body.password;
+						user.setPassword(password);
+						user.save(function(err,user){
+							var cupon = new Cupon();
+							cupon.user=user._id;
+							cupon.matches=[];
+							cupon.date=new Date();
+							cupon.save(function(err,cupon){
+								if(err){return next(err);}
+								var rank = new Rank();
+								rank.user=user._id;
+								rank.save(function(err,rank){
+									var token;
+									token=user.generateJwt();
+									res.status(200);
+									res.json({
+											"token" : token
+									});				
+								})
+							})
+						});
+					}
+				}else{
+					errors.push("Ten adres email jest już w systemie");
+					res.status(403).send(errors);
+				}
 			})
-
-		})
-		
-	});
+		}
+		else{
+			errors.push("Zajęta nazwa użytkownika")
+			res.status(403).send(errors);
+		}
+	})	
 });
+
 
 router.post('/login',function(req,res){
 	passport.authenticate('local', function(err, user, info){

@@ -3,6 +3,9 @@
   width: 600px;
   margin: 0 auto;
   box-shadow: 3px 4px 19px 0px rgba(0, 0, 0, 0.75); }
+  @media screen and (max-width: 720px) {
+    #rank-wrapper {
+      width: auto; } }
 
 .rank {
   font-family: 'Maven Pro', sans-serif;
@@ -12,6 +15,9 @@
   color: white;
   background-color: #5c6670;
   padding: 10px 0px; }
+  @media screen and (max-width: 720px) {
+    .rank {
+      width: auto; } }
   .rank:first-child {
     background-color: #242a2f;
     font-size: 16px;

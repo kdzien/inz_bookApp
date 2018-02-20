@@ -44,15 +44,18 @@ function($scope,$location,$http,auth,$timeout){
 			user:auth.currentUser()._id
 		};
 			$http.post("/bets", $scope.formJson).success(function(data,status) {
+				$scope.errorMessage="Dodano typ"
 				$scope.errorMessage=data;
 				$scope.betEvent=""
 				$scope.betType=""
 				$scope.betCourse=""
 				$scope.betAnalyse=""
-				$timeout(function(){
-					$scope.errorMessage = "";
-				},3000)
-			});			
+			}).error(err=>{
+				$scope.errorMessage= err.join(', ')
+			});	
+			$timeout(function(){
+				$scope.errorMessage = "";
+			},3000)		
 		}
 
 	function cleanForm() {

@@ -41,27 +41,27 @@ router.get('/bets/:choice', function(req,res,next){
 
 router.post('/bets/', function(req,res,next){
 	var currentUserId=req.body.user;
-	var brakujace=""
-	var send=true;
-	if(req.body.nazwa==undefined){
-		send=false;
-		brakujace+="typ "
+	var errors = new Array();
+	if(req.body.nazwa==undefined || req.body.nazwa==''){
+		errors.push("Nie wybrałeś wydarzenia")
 	}
-	if(req.body.typ==undefined){
-		send=false;
-		brakujace+="wydarzenie, "
+	if(req.body.typ==undefined || req.body.typ==''){
+		errors.push("Nie wprowadziłeś typu")
 	}
-	if(req.body.kurs==undefined){
-		send=false;
-		brakujace+="kurs"
+	if(req.body.kurs==undefined  || req.body.kurs==''){
+		errors.push("Nie wprowadziłeś kursu")
+	}
+	if(req.body.isAnalize==true && (req.body.analiza==undefined || req.body.analiza=='') ){
+		errors.push("Nie wprowadziłeś analizy")
 	}
 
 	Bet.findOne({nazwa : req.body.nazwa, user: currentUserId},function(err,bet){
-		if(bet==null){
-			if(send==false){
-				res.json("Uzupełnij brakujące pola: " + brakujace)
-				return;
-			}else{
+		if(bet){
+			res.status(403).send(["Dodałeś już typ na to wydarzenie"]);
+		}
+		else{
+			if(errors.length!=0){res.status(403).send(errors)}
+			else{
 				var bet = new Bet(req.body);
 				bet.save(function(err,bets){
 					if(err){return next(err);}
@@ -73,9 +73,6 @@ router.post('/bets/', function(req,res,next){
 				});
 				
 			}
-		}
-		else{
-			res.json("Dodałeś już typ na to wydarzenie")
 		}
 	})
 	

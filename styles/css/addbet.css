@@ -25,6 +25,9 @@
         background-color: #667786; }
       #form-panel form select *:not(button):focus, #form-panel form input *:not(button):focus, #form-panel form textarea *:not(button):focus, #form-panel form button *:not(button):focus {
         box-shadow: 0px -1px 5px 2px #ef6d00; }
+    #form-panel form textarea {
+      color: white;
+      padding: 5px; }
     #form-panel form button:hover {
       background-color: #242a2f; }
     #form-panel form textarea {

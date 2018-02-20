@@ -1,30 +1,14 @@
-
-
-<!-- <div class="panel panel-default"  >
-  <div class="panel-heading"><b>&nbsp;{{bet.nazwa}}</b>
-  
-  </div>
-  <div class="panel-body" >
-	  <div id="info">
-	  	<div class="col-md-4">Typ:<b>{{bet.typ}}</b></div>
-	  	<div class="col-md-4">Kurs:<b>{{bet.kurs}}</b></div>
-	  	<div class="col-md-4">Data:<b>{{bet.data | date:'HH:ss, dd.MM.yyyy'}}</b></div>
-	  </div>  
-	  <div><b>Analiza: </b>{{bet.analiza}}</div>
-	  <div style="text-align:right">Użytkownik: {{bet.user.name}}</div>
-  </div>
-</div> -->
-
-<div class ="col-md-6 col-md-offset-3 desc-bet" ng-repeat="bet in bets" ng-click="addItem(bet.nazwa)">
+<div class ="col-md-8 col-md-offset-2 desc-bet" ng-repeat="bet in bets" ng-click="addItem(bet.nazwa)">
 		<div class="{{bet.category}}-background" id="ico">
 			<img  ng-src="./images/{{bet.category}}.png" />
 		</div>
 		<div  id="desc">
 			<div id="title">{{bet.nazwa}}</div>
 			<div  class="row" id="info">
-				<div class="col-md-6">Typ: <b>{{bet.typ}}</b></div>
-				<div class="col-md-6">Kurs: <b>{{bet.kurs}}</b></div>
-				<div class="col-md-12">Data: <b>{{bet.data | date: 'HH:ss, dd.MM.yyyy'}}</b></div>
+				<div class="col-md-4">Typ: <b>{{bet.typ}}</b></div>
+				<div class="col-md-4">Kurs: <b>{{bet.kurs}}</b></div>
+				<div class="col-md-4">Użytkownik: <b>{{bet.user.name}}</b></div>
+				<div class="col-md-12">Data dodania: <b>{{bet.data | date: 'HH:ss, dd.MM.yyyy'}}</b></div>
 			</div>
 			<div id="analyse">{{bet.analiza}}</div>
 		</div>

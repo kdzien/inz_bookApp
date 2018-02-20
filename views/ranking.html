@@ -4,6 +4,9 @@
 		<input placeholder="wyszukaj" class="form-control" ng-model="userSearch"></input>
 	</form>
 </div>
+<div class="nobets" ng-if="checkCurrentUser()">
+	<span class="green">{{currentUser}}</span>, dodaj typ, aby być w rankingu!
+</div>	
 <div id="rank-wrapper">
 	<div class="row rank "  >
 		<div class="col-md-3">
@@ -36,32 +39,5 @@
 			</div>
 		</div>
 	</div>
-			
 </div>
-
-<!-- <div class="table-responsive">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>użytkownik</th>
-				<th>liczba typów</th>
-				<th>typy trafione</th>
-				<th>progres</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr >
-				<td>{{stat.user.name}}</td>
-				<td>{{stat.betCount}}</td>
-				<td>{{stat.rank}}</td>
-				<td>
-					<div class="progress">
-						<div class="progress-bar progress-bar-success" role="progressbar" style="width:{{getPercentage(stat)[0]}}%">
-						</div>
-					</div>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-	</div>
-</div> -->
+	

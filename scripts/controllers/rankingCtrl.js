@@ -7,6 +7,7 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 	$scope.currentUser=auth.currentUser().name;
 	$http.get("/rank").success(function(data) {
 		$scope.stats = data;
+		$scope.checkCurrentUser()
 	});
 
 	$scope.getPercentage = function(item){
@@ -22,5 +23,15 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 		if(item!=undefined){
 			return item.rank/item.betCount;
 		}
+	}
+	$scope.checkCurrentUser = function(){
+		for (var elem of $scope.stats) {
+			if(elem.user.name==$scope.currentUser){
+				if(elem.betCount==0){
+					return true;
+				}
+			}	
+		}
+		return false;
 	}
 }]);

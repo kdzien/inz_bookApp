@@ -142,7 +142,11 @@
 
 .col-sm-offset-right-2 {
   margin-right: 16.66666667%; }
-
+  @media (max-width:1024px) and (min-width:768px) {
+    .sm-fixed {
+        margin-left:25%;
+    }
+}​
 #login {
   top: 0;
   position: fixed;

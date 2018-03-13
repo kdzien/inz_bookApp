@@ -31,10 +31,10 @@ function getNewEvents(callback){
 	});
 }
 
-//odkomentowac do pobrania nowych typow
-// getNewEvents(function(){
-// 	console.log("ready");
-// });
+
+getNewEvents(function(){
+	console.log("ready");
+});
 
 var sendData = function(data){
 	for(var i=0;i<=data.length-1;i++){

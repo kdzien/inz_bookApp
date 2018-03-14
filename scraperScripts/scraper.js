@@ -13,8 +13,6 @@ url_handball = 'http://www.mwyniki.pl/pilka_reczna/';
 
 
 function getNewEvents(callback){
-	Bets.remove(function(err){
-	})
 	Events.remove(function(err){
 	})
 	getSportsEvents(url_volleyball, "volleyball",".status_type_2",function(result){

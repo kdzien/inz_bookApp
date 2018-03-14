@@ -66,7 +66,6 @@
     top: 303px;
 }
 #login{
-	top: 245px;
 }
 #rules{
 	@media screen and (max-width: 720px) {
@@ -169,6 +168,12 @@
 .col-sm-offset-right-2 {
     margin-right: 16.66666667%;
   }
+
+@media (max-width:1024px) and (min-width:768px) {
+	.sm-fixed{
+		margin-left:25%;
+	}
+}
 #login{
 	@media screen and (max-width: 720px) {
 		top:0 !important;

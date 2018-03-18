@@ -1,39 +1,132 @@
+@charset "UTF-8";
 #choose-panel {
   text-align: center; }
   #choose-panel img {
-    margin-right: 20px;
-    width: 50px; }
+    margin: 15px;
+    width: 60px; }
+    @media screen and (max-width: 768px) {
+      #choose-panel img {
+        width: 40px; } }
     #choose-panel img:hover {
       cursor: pointer; }
     #choose-panel img:last-child {
       margin-right: 0px; }
 
+.form-elem-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px;
+  margin-bottom: 5px;
+  position: relative; }
+  .form-elem-title svg {
+    float: right; }
+  .form-elem-title.analyse svg {
+    float: none; }
+  .form-elem-title.analyse:hover:after {
+    content: "Jeśli dodajesz typ bez analizy, pozostaw to pole puste";
+    font-size: 10px;
+    color: White;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    position: absolute;
+    bottom: -15;
+    display: block;
+    width: max-content; }
+
+.green-background {
+  background-color: #bfea44; }
+
+#form-wrapper {
+  color: black; }
+  #form-wrapper #event {
+    cursor: pointer; }
+  #form-wrapper .choosedMatch {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center; }
+  #form-wrapper .event-elements {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    z-index: 9;
+    height: 400px;
+    overflow-y: scroll; }
+    #form-wrapper .event-elements::-webkit-scrollbar {
+      display: none; }
+    #form-wrapper .event-elements .events {
+      width: 90%; }
+      #form-wrapper .event-elements .events .league-name {
+        text-align: center;
+        font-family: 'Nunito', sans-serif;
+        font-size: 18px;
+        font-weight: 400; }
+      #form-wrapper .event-elements .events .event-name {
+        font-family: 'Nunito', sans-serif;
+        font-size: 18px;
+        font-weight: 300; }
+        #form-wrapper .event-elements .events .event-name:hover {
+          cursor: pointer;
+          background-color: #bfea44; }
+  #form-wrapper #type #type-chooser {
+    text-align: center;
+    display: flex; }
+    #form-wrapper #type #type-chooser div {
+      flex: 0.333;
+      padding: 30px 0px; }
+      #form-wrapper #type #type-chooser div:hover {
+        cursor: pointer;
+        background-color: #bfea44; }
+  #form-wrapper #course input {
+    width: 40%;
+    border: none;
+    border-bottom: 1px solid #aee219;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px; }
+    #form-wrapper #course input:focus {
+      outline: none; }
+
+.hide {
+  display: none; }
+
 #form-panel {
   color: black !important; }
   #form-panel form {
-    margin: 0 auto;
-    width: 600px; }
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 400; }
     @media screen and (max-width: 720px) {
       #form-panel form {
         width: auto; } }
-    #form-panel form select, #form-panel form input, #form-panel form textarea, #form-panel form button {
-      width: 100%;
-      border-radius: 0;
+    #form-panel form textarea {
+      margin-top: 10px;
       border: none;
-      background-color: #242a2f; }
-      #form-panel form select option, #form-panel form input option, #form-panel form textarea option, #form-panel form button option {
-        background-color: #667786; }
-      #form-panel form select *:not(button):focus, #form-panel form input *:not(button):focus, #form-panel form textarea *:not(button):focus, #form-panel form button *:not(button):focus {
-        box-shadow: 0px -1px 5px 2px #ef6d00; }
-    #form-panel form textarea {
-      color: white;
-      padding: 5px; }
-    #form-panel form button:hover {
-      background-color: #242a2f; }
-    #form-panel form textarea {
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      width: 100%;
+      color: black;
+      padding: 5px;
       height: 100px; }
+      #form-panel form textarea:focus {
+        outline: #aee219 !important; }
     #form-panel form > * {
       margin-bottom: 10px; }
+
+.postBet {
+  font-family: 'Nunito', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  border: none;
+  background-color: white;
+  color: #aee219;
+  margin-top: 20px; }
+  .postBet:focus {
+    outline: none; }
 
 .margin-bottom {
   margin-bottom: 20px; }
@@ -46,7 +139,7 @@
   border-radius: 50%; }
 
 .soccer {
-  background-color: white;
+  background-color: #f3f9fd;
   border-radius: 50%; }
 
 .handball {
@@ -62,7 +155,7 @@
   border-radius: 0%; }
 
 .soccer-background {
-  background-color: white;
+  background-color: #f3f9fd;
   border-radius: 0%; }
 
 .handball-background {

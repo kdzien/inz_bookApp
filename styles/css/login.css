@@ -43,7 +43,11 @@
       margin-bottom: 20px;
       color: black; }
     #register form button, #login form button {
-      background-color: #85b80d !important; }
+      background-color: #85b80d !important;
+      border: none;
+      border-radius: 0%; }
+      #register form button:focus, #login form button:focus {
+        outline: none; }
     #register form #title, #login form #title {
       font-weight: 500;
       color: white;
@@ -101,7 +105,7 @@
     font-size: 32px;
     margin-bottom: 100px; }
   #benefits .th-head {
-    color: #fb7200;
+    color: #aee219;
     font-size: 110px;
     width: 180px;
     height: 180px;
@@ -122,13 +126,13 @@
     #benefits .th-head .corner-right {
       bottom: 0;
       right: 0;
-      border-bottom: solid 3px #fbb800;
-      border-right: solid 3px #fbb800; }
+      border-bottom: solid 3px white;
+      border-right: solid 3px white; }
     #benefits .th-head .corner-left {
       top: 0;
       left: 0;
-      border-top: solid 3px #fbb800;
-      border-left: solid 3px #fbb800; }
+      border-top: solid 3px white;
+      border-left: solid 3px white; }
   #benefits .th-text {
     margin: 0 auto;
     width: 250px;
@@ -155,7 +159,7 @@
     #login {
       top: 0 !important; } }
   #login form {
-    background-color: #2e3338 !important;
+    background-color: rgba(0, 0, 0, 0.7);
     width: 600px !important;
     position: absolute;
     top: 50%;
@@ -170,17 +174,24 @@
       text-align: center;
       color: white;
       font-size: 22px; }
-
-.closee {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  color: red;
-  font-size: 22px;
-  cursor: pointer; }
+  #login .closee {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: red;
+    font-size: 22px;
+    cursor: pointer; }
 
 .error {
   color: gold;
+  text-align: center; }
+
+footer {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  padding: 10px;
   text-align: center; }
 
 /*# sourceMappingURL=maps/login.css.map */

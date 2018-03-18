@@ -21,10 +21,10 @@ function($scope,$location,cuponFactory,auth,$timeout){
 		var kuponElement = document.getElementById("cupon-list")
 		if(isListHide==true){
 			kuponElement.style.animationName="slideLeft ";
-			kuponElement.style.right="300px";
+			kuponElement.style.top="0%";
 		}else{
 			kuponElement.style.animationName="slideRight ";
-			kuponElement.style.right="0";
+			kuponElement.style.top="-100%";
 		}
 		isListHide=!isListHide;
 	}

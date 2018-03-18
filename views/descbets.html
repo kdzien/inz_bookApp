@@ -1,16 +1,18 @@
-<div class ="col-md-8 col-md-offset-2 desc-bet" ng-repeat="bet in bets" ng-click="addItem(bet.nazwa)">
+<div class ="col-md-8 col-md-offset-2 col-xs-12 desc-bet" ng-repeat="bet in bets" >
 		<div class="{{bet.category}}-background" id="ico">
 			<img  ng-src="./images/{{bet.category}}.png" />
 		</div>
 		<div  id="desc">
-			<div id="title">{{bet.nazwa}}</div>
-			<div  class="row" id="info">
-				<div class="col-md-4">Typ: <b>{{bet.typ}}</b></div>
-				<div class="col-md-4">Kurs: <b>{{bet.kurs}}</b></div>
-				<div class="col-md-4">Użytkownik: <b>{{bet.user.name}}</b></div>
-				<div class="col-md-12">Data dodania: <b>{{bet.data | date: 'HH:ss, dd.MM.yyyy'}}</b></div>
-			</div>
+			<div id="title">{{bet.nazwa}}<div id="subtitle"><strong>Typ: </strong>{{convertType(bet.typ)}} <strong>Kurs:</strong> {{bet.kurs}}</div></div>
+			
 			<div id="analyse">{{bet.analiza}}</div>
+			<div class="addButton" ng-click="addItem(bet.nazwa)"><i class="fas fa-plus"></i></div>
+		</div>
+		<div  id="user">
+			<div id="info">
+				<i class="far fa-user"></i>
+				{{bet.user.name}}
+			</div>
 		</div>
 	</div>
 

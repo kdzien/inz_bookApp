@@ -11,140 +11,96 @@ a {
 .on-modal {
   overflow: hidden; }
 
-#menu-left {
-  font-family: 'Maven Pro', sans-serif;
-  background-color: #2e3338;
+#header-main {
   position: fixed;
-  display: inline-block;
-  height: 100%;
-  width: 300px; }
-  @media screen and (max-width: 720px) {
-    #menu-left {
-      background-color: #2e3338;
-      z-index: 999;
-      width: 100%;
-      position: inherit;
-      height: auto; } }
-  #menu-left ul {
-    padding: 0px !important; }
-    #menu-left ul svg {
-      margin-right: 15px; }
-    @media screen and (max-width: 720px) {
-      #menu-left ul {
-        text-align: center; } }
-    #menu-left ul li {
-      list-style-type: none;
-      font-size: 18px;
-      padding: 3px 30px; }
-      #menu-left ul li:nth-child(2) {
-        padding: 0;
-        padding-bottom: 5px; }
-      #menu-left ul li:nth-child(3):hover, #menu-left ul li:nth-child(4):hover {
-        background-color: #242a2f;
+  z-index: 99999;
+  width: 100%;
+  background-color: white;
+  border-bottom: solid 1px #dedede;
+  color: black;
+  height: max-content;
+  display: flex;
+  justify-content: space-between; }
+  #header-main img {
+    height: 20px;
+    margin: 10px; }
+    @media screen and (max-width: 768px) {
+      #header-main img {
+        display: none; } }
+  #header-main ul {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    list-style-type: none;
+    display: flex;
+    float: right;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      #header-main ul {
+        padding: 0; } }
+    #header-main ul.text-icons svg {
+      display: none; }
+    #header-main ul.text-icons li {
+      border: none; }
+      @media screen and (max-width: 768px) {
+        #header-main ul.text-icons li {
+          font-size: 0;
+          border-right: solid 1px #dedede;
+          border-left: solid 1px #dedede;
+          padding: 10px 15px; }
+          #header-main ul.text-icons li svg {
+            display: initial;
+            font-size: 20px; } }
+    #header-main ul li {
+      border-right: solid 1px #dedede;
+      border-left: solid 1px #dedede;
+      padding: 10px 15px; }
+      #header-main ul li:hover {
+        color: #aee219;
         cursor: pointer; }
-      #menu-left ul li:nth-child(4) svg {
-        margin-right: 13px; }
-    #menu-left ul .menu {
-      font-size: 13px !important;
-      font-weight: bold;
-      padding-bottom: 10px;
-      color: #727272; }
-    #menu-left ul .inside li {
-      font-size: 18px;
-      padding: 3px 40px; }
-      #menu-left ul .inside li:hover {
-        background-color: #242a2f;
-        cursor: pointer; }
-  #menu-left #user {
-    padding: 15px;
-    margin-bottom: 15px;
-    width: 170px;
-    padding-bottom: 10px;
-    font-size: 18px; }
-    @media screen and (max-width: 720px) {
-      #menu-left #user {
-        position: inherit;
-        border-top: none;
-        text-align: center; } }
-    #menu-left #user span {
-      margin-right: 15px; }
-      #menu-left #user span i {
-        font-size: 18px;
-        margin-right: 15px;
-        padding-right: 20px; }
-      #menu-left #user span:hover {
-        cursor: pointer; }
-  #menu-left #logout {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    font-size: 25px;
-    letter-spacing: 1px;
-    width: 100%;
-    padding: 15px 0px;
-    background-color: #242a2f;
-    cursor: pointer; }
-    @media screen and (max-width: 720px) {
-      #menu-left #logout {
-        position: initial; } }
-    #menu-left #logout:hover {
-      background-color: #2f373d; }
+      #header-main ul li i {
+        margin: 0px 10px; }
 
-#content-right {
-  overflow: auto;
-  padding-left: 300px;
-  height: 100%; }
-  @media screen and (max-width: 720px) {
-    #content-right {
-      padding-left: 0px;
-      overflow: none; } }
-  #content-right #main-content {
-    padding: 20px; }
+#main-content {
+  padding-top: 80px; }
 
 .currentPage {
-  background-color: #242a2f; }
+  border-bottom: solid 1px #aee219 !important; }
 
 .fixed-margin {
   float: none;
   margin: 0 auto; }
 
 #cupon-list {
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  padding: 20px;
-  padding-top: 80px;
-  font-family: 'Maven Pro', sans-serif;
-  color: white;
-  background-color: #2e3338;
+  border-left: solid 1px #dedede;
+  border-bottom: solid 1px #dedede;
+  color: black;
+  background-color: white;
   position: fixed;
   width: 300px;
   height: 100%;
-  right: -300px;
-  top: 0; }
-  #cupon-list #header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-align: center;
-    font-size: 25px;
-    letter-spacing: 1px;
-    width: 100%;
-    padding: 15px 0px;
-    background-color: #242a2f;
-    cursor: pointer; }
+  top: -100%;
+  z-index: 9999;
+  padding-top: 60px;
+  right: 0;
+  overflow: hidden;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards; }
   #cupon-list .cupon-element {
     margin-bottom: 5px;
-    font-size: 15px; }
-    #cupon-list .cupon-element i {
+    font-size: 15px;
+    padding-left: 15px; }
+    #cupon-list .cupon-element svg {
       padding-right: 5px;
+      font-size: 15px;
       color: red;
       cursor: pointer; }
   #cupon-list #savePanel {
     transform: translateX(-50%);
     left: 50%;
     position: absolute;
-    color: white;
+    color: #aee219;
     bottom: 0;
     padding: 10px;
     font-size: 30px; }
@@ -153,20 +109,6 @@ a {
       display: inline-block; }
       #cupon-list #savePanel div:hover {
         color: #242a2f; }
-  #cupon-list #hide-button {
-    position: absolute;
-    top: 50%;
-    transform: translateX(-50%);
-    left: -25px;
-    width: 50px;
-    height: 50px;
-    background-color: #2e3338;
-    font-size: 25px; }
-    #cupon-list #hide-button #hbx {
-      font-size: 25px;
-      padding: 14px 10px 14px 15px; }
-    #cupon-list #hide-button:hover {
-      cursor: pointer; }
   #cupon-list .cupon-warning {
     text-align: center;
     display: none;
@@ -174,37 +116,23 @@ a {
 
 @keyframes slideLeft {
   from {
-    right: -300px; }
+    top: -100%; }
   to {
-    right: 0px; } }
+    top: 0%; } }
 
 @keyframes slideRight {
   from {
-    right: 0px; }
+    top: 0%; }
   to {
-    right: -300px; } }
-
-@keyframes shake {
-  0% {
-    transform: rotate(0deg); }
-  25% {
-    transform: rotate(40deg); }
-  50% {
-    transform: rotate(-40deg); }
-  75% {
-    transform: rotate(20deg); }
-  100% {
-    transform: rotate(-20deg); } }
-
-.shake-animation {
-  animation-name: shake;
-  animation-duration: 0.2s; }
+    top: -100%; } }
 
 .warning {
+  font-family: 'Nunito', sans-serif;
   font-size: 18px;
+  font-weight: 600;
   text-align: center;
   color: #ffb414;
-  font-weight: bold; }
+  padding: 10px; }
 
 .warning-center {
   position: relative; }

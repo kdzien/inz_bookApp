@@ -5,54 +5,140 @@
 #choose-panel{
 	text-align:center;
 	img{
-		margin-right:20px;
-		width:50px;
-	&:hover{
+		margin:15px;
+		width:60px;
+		@media screen and (max-width: 768px) {
+			width:40px;
+		}
+		&:hover{
+			cursor:pointer;
+		}
+		
+		&:last-child{
+			margin-right:0px;
+		}
+	}
+}
+.form-elem-title{
+	@include custom-font(20px,400);
+	padding:10px;
+	margin-bottom:5px;
+	position:relative;
+	svg{
+		float:right;
+	}
+	&.analyse{
+		svg{
+			float:none;
+		}	
+		&:hover{
+			&:after{
+				@include message("Jeśli dodajesz typ bez analizy, pozostaw to pole puste")
+			}
+		}
+	}
+}
+.green-background{
+	background-color:lighten($green-color,10%);
+}
+#form-wrapper{
+	color:black;
+	#event{
 		cursor:pointer;
 	}
-	&:last-child{
-		margin-right:0px;
+	.choosedMatch{
+		@include custom-font(16px, 400);text-align:center;
 	}
+	.event-elements{
+		position: absolute;
+		width: 100%;
+		background-color: white;
+		z-index: 9;
+		height: 400px;
+		overflow-y: scroll;
+		&::-webkit-scrollbar { 
+			display: none; 
+		}
+		.events{
+			width:90%;
+			.league-name{
+				text-align:center;
+				@include custom-font(18px, 400);
+			}
+			.event-name{
+				@include custom-font(18px, 300);
+				&:hover{
+					cursor:pointer;
+					background-color:lighten($green-color,10%)
+				}
+			}
+		}
 	}
+	#type{
+		#type-chooser{
+			text-align:center;
+			display:flex;
+			& div{
+				flex:0.333;
+				padding:30px 0px;
+
+				&:hover{
+					cursor:pointer;
+					background-color:lighten($green-color,10%)
+				}
+			}
+		}
+	}
+	#course{
+		input{
+			width:40%;
+			border:none;
+			border-bottom: 1px solid $green-color;
+			@include custom-font(15px,400);text-align:center;
+			padding:10px;
+			&:focus{
+				outline:none;
+			}
+		}
+	}
+}
+.hide{
+	display:none;
 }
 #form-panel{
 	color:black !important;
 	form{
-		margin:0 auto;
-		width:600px;
+		@include custom-font(20px,400);
 		@media screen and (max-width: 720px) {
 			width:auto;
 		}
-		select, input,textarea,button{
+		textarea{
+			margin-top:10px;
+			border: none;
+			@include custom-font(15px,400);
 			width:100%;	
-			border-radius:0;
-			border:none;
-			background-color:$foreground-second-color;
-			option{
-				background-color:lighten($foreground-second-color,30%);
-			}
-			*:not(button):focus{
-				box-shadow: 0px -1px 5px 2px rgba(239,109,0,1);
-			}
-		}
-		textarea{
-			color:white;
+			color:black;
 			padding:5px;
-		}
-		button{
-			&:hover{
-				background-color:$foreground-second-color;
+			height:100px;
+			&:focus{
+				outline:$green-color !important;
 			}
-		}
-		textarea{
-			height:100px
 		}
 		&>*{
 			margin-bottom:10px
 		}
 	}
 }
-
+.postBet{
+	@include custom-font(30px,400);
+	border:none;
+	background-color:white;
+	color:$green-color;
+	margin-top:20px;
+	&:focus{
+		outline:none;
+	}
+}
 .margin-bottom{
 	margin-bottom:20px;
 }
@@ -63,8 +149,9 @@
 }
 .basketball{
 	@include sport-icon(#c37e00,50%);
+
 }
-.soccer{@include sport-icon(white,50%);
+.soccer{@include sport-icon(#f3f9fd,50%);
 }
 .handball{@include sport-icon(#3277FF,50%);
 }
@@ -73,7 +160,7 @@
 .basketball-background{
 	@include sport-icon(#c37e00,0%);
 }
-.soccer-background{@include sport-icon(white,0%);
+.soccer-background{@include sport-icon(#f3f9fd,0%);
 }
 .handball-background{@include sport-icon(#3277FF,0%);
 }

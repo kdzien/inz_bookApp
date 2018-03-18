@@ -3,11 +3,14 @@ angular.module('betApp').controller('addBetCtrl', [
 
 function($scope,$location,$http,auth,$timeout){
 	$scope.currentChoice="basketball";
+	$scope.currentMatch="Nie wybrano wydarzenia"
 	$scope.events=new Array();
 	$scope.descChecked=false;
 	$scope.errorMessage=""
+	$scope.openselect=false;
 
 	$http.get("/events").success(function(data) {
+		console.log(data)
 		var all=[]
 		for(var i=0;i<=data.length-1;i++){
 			var league = {sport:data[i].discipline,league:data[i].league,matches:[]}
@@ -29,25 +32,34 @@ function($scope,$location,$http,auth,$timeout){
 		}
 		$scope.allE=all;
 	});
-
+	$scope.setCurrentMatch = function(event){
+		$scope.currentMatch = event.match_name
+		$scope.openselect=false;
+	}
 	$scope.setCurrentChoice = function(choice){
 		$scope.currentChoice=choice;
 	}
 	$scope.postBet = function(){
+		let isAnalized=true;
+		if(!$scope.betAnalyse){
+			$scope.betAnalyse=''
+			isAnalized=false;
+		}
 		$scope.formJson={
-			nazwa: $scope.betEvent,
-			typ: $scope.betType,
+			nazwa: $scope.currentMatch,
+			typ: $scope.selectedType,
 			kurs: $scope.betCourse,
-			isAnalize:$scope.descChecked,
+			isAnalize:isAnalized,
 			analiza: $scope.betAnalyse,
 			category:$scope.currentChoice,
 			user:auth.currentUser()._id
 		};
-			$http.post("/bets", $scope.formJson).success(function(data,status) {
+		console.log($scope.formJson)
+		$http.post("/bets", $scope.formJson).success(function(data,status) {
 				$scope.errorMessage="Dodano typ"
 				$scope.errorMessage=data;
-				$scope.betEvent=""
-				$scope.betType=""
+				$scope.selectedType="Nie wybrano wydarzenia"
+				$scope.selectedType=""
 				$scope.betCourse=""
 				$scope.betAnalyse=""
 			}).error(err=>{

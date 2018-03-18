@@ -1,37 +1,51 @@
 @import 'variables.scss';
 @import 'mixins.scss';
 
+.user-search{
+	width:50%;
+	margin:0 auto;
+	input{
+		width:100%;
+		border:none;
+		text-align:center;
+		&:focus{
+			outline:none;
+		}
+	}
+}
 #rank-wrapper{
 	display: block;
-	width:600px;
+	width:50%;
     @media screen and (max-width: 720px) {
 		width:auto;
 	}
     margin: 0 auto;
-	box-shadow: 3px 4px 19px 0px rgba(0, 0, 0, 0.75);
 }
 .rank{
 	font-family: 'Maven Pro', sans-serif;
-	width:600px;
+	width:100%;
 	@media screen and (max-width: 720px) {
 		width:auto;
 	}
 	margin:0 auto;
 	text-align:center;
-	color:white;
+	color:black;
 	background-color:lighten($foreground-color,20%);
 	padding:10px 0px;
-	&:first-child{
-	background-color:$foreground-second-color;
-		font-size:16px;
-		padding:15px 0px;
-		border-bottom:solid 2px white;
+	$curr-prec:2;
+	@for $i from $curr-prec through 4 {
+		&:nth-child(#{$i}){
+			background-color:lighten($second-color,$curr-prec);
+			$curr-prec:$i*10;
+		}
 	}
 }
 //override
 .progress{
 	margin-bottom:0;
-	background-color:rgba(255,255,255,0.5);
+	background-color:rgba(0,0,0,0);
+	border:none;
+	box-shadow:none;
 }
 .progress-bar-success{
 	background-color:#77F60F;
@@ -39,15 +53,7 @@
 .progress-bar-danger{
 	
 }
-table{
-	tbody{
-		tr{
-			td{
-				border-top:none !important;
-			}
-		}
-	}
-}
+
 .green{
 	color:#77F60F;
 }

@@ -1,31 +1,37 @@
 .cat-img {
-  width: 60px;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 15px; }
+  width: 20px;
+  margin: 0 auto; }
 
 .small-bet {
-  background-color: #2e3338;
+  display: flex;
+  justify-content: space-between;
+  background-color: #242a2f;
   padding: 10px;
   margin-bottom: 10px;
-  transition: transform 0.2s;
-  text-align: center; }
+  transition: transform 0.2s; }
   .small-bet:hover {
     opacity: 0.9;
     cursor: pointer; }
+  .small-bet #bet-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right; }
 
 .desc-bet {
-  cursor: pointer;
-  font-family: 'Source Sans Pro', sans-serif;
-  padding: 10px 10px 10px 0px;
-  display: flex; }
-  .desc-bet:hover {
-    opacity: 0.9; }
-  .desc-bet div {
-    padding: 0 !important; }
+  -webkit-box-shadow: 10px 10px 15px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 15px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 15px -6px rgba(0, 0, 0, 0.75);
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  position: relative;
+  flex-flow: row wrap; }
   .desc-bet #ico {
-    border: solid 2px #e3e6e8;
-    flex: 0.8; }
+    flex: 0.2; }
+    @media screen and (max-width: 768px) {
+      .desc-bet #ico {
+        flex: 100%;
+        height: 100px; } }
     .desc-bet #ico img {
       width: 70px;
       display: block;
@@ -34,45 +40,81 @@
       top: 50%;
       transform: translateY(-50%); }
   .desc-bet #desc {
-    background-color: #e3e6e8;
-    flex: 2.2;
+    position: relative;
+    flex: 0.6;
     color: black;
+    background-color: white;
     padding: 0 !important; }
+    @media screen and (max-width: 768px) {
+      .desc-bet #desc {
+        flex: 100%; } }
     .desc-bet #desc div {
       display: block; }
     .desc-bet #desc #title {
-      text-align: center;
-      font-size: 20px; }
-    .desc-bet #desc #info {
-      font-size: 14px;
-      text-align: center; }
+      padding: 10px !important;
+      font-size: 20px;
+      font-weight: 400;
+      padding-bottom: 0 !important; }
+      .desc-bet #desc #title #subtitle {
+        font-size: 15px;
+        color: gray; }
     .desc-bet #desc #analyse {
-      padding: 0px 10px !important;
-      font-size: 17px; }
-
-.panel {
-  width: 70%;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  background-color: initial !important;
-  transition: transform 0.2s; }
-  .panel:hover {
-    transform: scale(1.02);
-    cursor: pointer; }
-
-.panel-default {
-  border: none;
-  border-radius: 0; }
-  .panel-default .panel-heading {
-    border: none;
-    color: white !important;
-    background-color: black;
-    border-radius: 0; }
-  .panel-default .panel-body {
-    background-color: rgba(0, 0, 0, 0.5);
-    word-wrap: break-word; }
-    .panel-default .panel-body #info {
-      text-align: center;
-      margin-bottom: 30px; }
+      text-align: justify;
+      padding: 10px 10px !important;
+      padding-right: 60px !important;
+      font-size: 15px; }
+      @media screen and (max-width: 768px) {
+        .desc-bet #desc #analyse {
+          padding-right: 10px !important;
+          margin-bottom: 40px; } }
+  .desc-bet .addButton {
+    z-index: 9999;
+    right: -28;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    padding: 10px;
+    color: white;
+    border-radius: 50%;
+    background-color: #aee219; }
+    .desc-bet .addButton:hover {
+      background-color: #cfef72;
+      cursor: pointer; }
+      .desc-bet .addButton:hover:after {
+        content: "Dodaj ten typ do kuponu";
+        font-size: 10px;
+        color: White;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 5px;
+        position: absolute;
+        bottom: -15;
+        display: block;
+        width: max-content; }
+    @media screen and (max-width: 768px) {
+      .desc-bet .addButton {
+        right: 0;
+        top: auto; } }
+  .desc-bet #user {
+    background-color: #dedede;
+    color: black;
+    flex: 0.2;
+    position: relative; }
+    @media screen and (max-width: 768px) {
+      .desc-bet #user {
+        flex: 100%;
+        height: 100px; } }
+    .desc-bet #user #info {
+      display: flex;
+      flex-direction: column;
+      width: max-content;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .desc-bet #user #info svg {
+        font-size: 35px;
+        margin: 0 auto; }
 
 /*# sourceMappingURL=maps/bets.css.map */

@@ -15,9 +15,29 @@
 	border-right:solid $size $color;
 	border-left:solid $size $color;
 	}
+	@if $type=="bottom"{
+	border-bottom:solid $size $color;
+	}
 }
 
 @mixin sport-icon($color,$radius){
 	background-color:$color;
 	border-radius:$radius;
+}
+
+@mixin custom-font($size,$weight){
+	font-family: 'Nunito', sans-serif;
+	font-size:$size;
+	font-weight:$weight;
+}
+@mixin message($message){
+	content:$message;
+	font-size:10px;
+	color:White;
+	background-color:rgba(0,0,0,0.5);
+	padding:5px;
+	position:absolute;
+	bottom:-15;
+	display:block;
+	width:max-content;
 }

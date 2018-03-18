@@ -60,8 +60,8 @@ function getSportsEvents(url, name,statusType,callback){
 					if(elem.children[4].children[0].children[1].children[0]===undefined){return}
 	            	var away = elem.children[4].children[0].children[1].children[0].data;
 	            	var match_name = home+"-"+away;
-	            	var score_home = elem.children[6].children[1].children[0].children[0].data;
-	            	var score_away = elem.children[6].children[1].children[1].children[0].data;
+	            	var score_home = "0" //elem.children[6].children[1].children[0].children[0].data;
+	            	var score_away = "0" //elem.children[6].children[1].children[1].children[0].data;
 	        		if(league===undefined || away===undefined || home===undefined || score_home===undefined || score_away===undefined){
 	        			return;
 	        		}else{

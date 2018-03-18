@@ -42,7 +42,7 @@ router.get('/bets/:choice', function(req,res,next){
 router.post('/bets/', function(req,res,next){
 	var currentUserId=req.body.user;
 	var errors = new Array();
-	if(req.body.nazwa==undefined || req.body.nazwa==''){
+	if(req.body.nazwa==undefined || req.body.nazwa=='' || req.body.nazwa=='Nie wybrano wydarzenia'){
 		errors.push("Nie wybrałeś wydarzenia")
 	}
 	if(req.body.typ==undefined || req.body.typ==''){

@@ -1,11 +1,10 @@
 
-<div ng-click="addItem(bet.nazwa)" class=" small-bet col-md-3" ng-repeat="bet in bets">	
+<div ng-click="addItem(bet.nazwa)" class=" small-bet col-md-6 col-md-offset-3" ng-repeat="bet in bets">	
 	<div>
 		<img class="cat-img {{bet.category}}" ng-src="./images/{{bet.category}}.png" />
 		<b>{{bet.nazwa}}</b>
 	</div>
-	<div>Typ:{{bet.typ}}</div>
-	<div>Użytkownik: {{bet.user.name}}</div>
+	<div id="bet-info"><span><strong>Typ:</strong> {{convertType(bet.typ)}}</span> <span><strong>Kurs:</strong> {{bet.kurs}}</span></div>
 </div>
 <div class="warning">{{errorMessage}}</div>
 

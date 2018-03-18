@@ -1,38 +1,38 @@
 
-<div id="form-panel">
+<div id="form-panel" class=" user-search">
 	<form>
-		<input placeholder="wyszukaj" class="form-control" ng-model="userSearch"></input>
+		<input placeholder="wyszukaj" ng-model="userSearch"></input>
 	</form>
 </div>
 <div class="nobets" ng-if="checkCurrentUser()">
 	<span class="green">{{currentUser}}</span>, dodaj typ, aby być w rankingu!
 </div>	
 <div id="rank-wrapper">
-	<div class="row rank "  >
+	<div class="row rank">
 		<div class="col-md-3">
-			Użytkownik
+			
 		</div>
-		<div class="col-md-3">
-			Liczba typów
+		<div class="col-md-3 col-xs-6 col-sm-6" id="betCount">
+			Dodane
 		</div>
-		<div class="col-md-3">
-			Trafione typy
+		<div class="col-md-3 col-xs-6 col-sm-6" id=" betCheck">
+			Trafione
 		</div>
-		<div class="col-md-3">
-			Progres
+		<div class="col-md-3 col-xs-12 col-sm-12">
+			
 		</div>
 	</div>
 	<div class="row rank" ng-repeat="stat in stats | orderBy:'-rank/betCount' | filter: userSearch  track by $index" ng-if="stat.betCount > 0" ng-class='{green : stat.user.name==currentUser}'>
 		<div class="col-md-3">
 			{{stat.user.name}}
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3 col-xs-6 col-sm-6" id="betCount">
 			{{stat.betCount}}
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3 col-xs-6 col-sm-6" id=" betCheck">
 			{{stat.rank}}
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3 col-xs-12 col-sm-12">
 			<div class="progress">
 				<div class="progress-bar progress-bar-success" role="progressbar" style="width:{{getPercentage(stat)[0]}}%">
 				</div>

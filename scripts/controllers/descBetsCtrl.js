@@ -18,6 +18,7 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 	function getData(){
 		$http.get("/bets/desc").success(function(data) {
 			$scope.bets = data;
+			console.log(data)
 		});	
 	}
 	$scope.iksde = function(obj){
@@ -34,6 +35,15 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 			return true;
 		}
 		return false;
+	}
+	$scope.convertType = function(type){
+		if(type=="1"){
+			return "wygrana gospodarzy"
+		}else if(type=="2"){
+			return "wygrana gości"
+		}else{
+			return "remis"
+		}
 	}
 
 }]);

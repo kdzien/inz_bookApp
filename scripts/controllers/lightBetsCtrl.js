@@ -13,14 +13,18 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 	}
 	getData();
 	$scope.addItem = function(obj){
+
+		var warning = document.querySelector('.cupon-warning');
 		if(cuponFactory.addMecz(obj)==1){
-			var warning = document.querySelector('.cupon-warning');
-			warning.style.display="block";
-			$timeout(function(){
-				warning.style.display="none";
-			},1500)
+			warning.innerHTML="Mecz jest już na kuponie"
 		}else{
+			warning.innerHTML="Dodano typ do kuponu"
 		};
+
+		warning.style.display="block";
+		$timeout(function(){
+			warning.style.display="none";
+		},1500)
 	}
 	$scope.iksde = function(obj){
 		$http.delete("/bets/"+obj._id).success(function(data) {
@@ -45,5 +49,14 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 		}else{
 			return "remis"
 		}
+	}
+	$scope.setCorrectIcon = function(category){
+		var icons = {
+			soccer:"fas fa-futbol",
+			basketball:"fas fa-basketball-ball",
+			volleyball:"fas fa-volleyball-ball",
+			handball:"far fa-futbol"
+		}
+		return icons[category];
 	}
 }]);

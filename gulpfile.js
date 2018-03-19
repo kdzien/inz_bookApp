@@ -24,7 +24,6 @@ gulp.task('scripts', function() {
 
 gulp.task('html',function(){  
     return gulp.src('./views/*.html')
-    .pipe(browserSync.stream());
 });
 
 gulp.task('watch', function() {  
@@ -33,8 +32,8 @@ gulp.task('watch', function() {
         port: 7000,
     });
     gulp.watch('./styles/scss/*.scss', ['sass']);
-    gulp.watch('./scripts/controllers/*.js', ['scripts']);
-    gulp.watch('./views/*.html', ['html']);
+    gulp.watch('./scripts/controllers/*.js', ['scripts']).on('change', browserSync.reload);;
+    gulp.watch('./views/*.html', ['html']).on('change', browserSync.reload);;
 });
 
 gulp.task('server',function(){  

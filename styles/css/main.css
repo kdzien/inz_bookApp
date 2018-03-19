@@ -1,5 +1,8 @@
 body {
-  color: white; }
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/main-bg.jpg") no-repeat;
+  background-size: cover;
+  font-family: 'Nunito', sans-serif; }
 
 a {
   text-decoration: none;
@@ -57,7 +60,7 @@ a {
       border-left: solid 1px #dedede;
       padding: 10px 15px; }
       #header-main ul li:hover {
-        color: #aee219;
+        color: #46bdc1;
         cursor: pointer; }
       #header-main ul li i {
         margin: 0px 10px; }
@@ -66,7 +69,7 @@ a {
   padding-top: 80px; }
 
 .currentPage {
-  border-bottom: solid 1px #aee219 !important; }
+  color: #46bdc1; }
 
 .fixed-margin {
   float: none;
@@ -100,7 +103,7 @@ a {
     transform: translateX(-50%);
     left: 50%;
     position: absolute;
-    color: #aee219;
+    color: #46bdc1;
     bottom: 0;
     padding: 10px;
     font-size: 30px; }
@@ -109,10 +112,16 @@ a {
       display: inline-block; }
       #cupon-list #savePanel div:hover {
         color: #242a2f; }
-  #cupon-list .cupon-warning {
-    text-align: center;
-    display: none;
-    color: #f9ec25; }
+
+.cupon-warning {
+  position: absolute;
+  right: 0px;
+  top: 50;
+  display: none;
+  text-align: center;
+  color: #f9ec25;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px; }
 
 @keyframes slideLeft {
   from {
@@ -131,7 +140,7 @@ a {
   font-size: 18px;
   font-weight: 600;
   text-align: center;
-  color: #ffb414;
+  color: #eebb2e;
   padding: 10px; }
 
 .warning-center {

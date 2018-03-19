@@ -1,6 +1,6 @@
 <div class ="col-md-8 col-md-offset-2 col-xs-12 desc-bet" ng-repeat="bet in bets" >
 		<div class="{{bet.category}}-background" id="ico">
-			<img  ng-src="./images/{{bet.category}}.png" />
+			<i class="{{setCorrectIcon(bet.category)}}"></i>
 		</div>
 		<div  id="desc">
 			<div id="title">{{bet.nazwa}}<div id="subtitle"><strong>Typ: </strong>{{convertType(bet.typ)}} <strong>Kurs:</strong> {{bet.kurs}}</div></div>

@@ -45,5 +45,14 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 			return "remis"
 		}
 	}
+	$scope.setCorrectIcon = function(category){
+		var icons = {
+			soccer:"fas fa-futbol",
+			basketball:"fas fa-basketball-ball",
+			volleyball:"fas fa-volleyball-ball",
+			handball:"far fa-futbol"
+		}
+		return icons[category];
+	}
 
 }]);

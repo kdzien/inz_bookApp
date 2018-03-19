@@ -1,16 +1,16 @@
 .cat-img {
-  width: 20px;
+  font-size: 20px;
   margin: 0 auto; }
 
 .small-bet {
   display: flex;
   justify-content: space-between;
-  background-color: #242a2f;
+  background-color: rgba(36, 42, 47, 0.8);
   padding: 10px;
   margin-bottom: 10px;
   transition: transform 0.2s; }
   .small-bet:hover {
-    opacity: 0.9;
+    background-color: rgba(205, 10, 10, 0.5);
     cursor: pointer; }
   .small-bet #bet-info {
     display: flex;
@@ -32,8 +32,8 @@
       .desc-bet #ico {
         flex: 100%;
         height: 100px; } }
-    .desc-bet #ico img {
-      width: 70px;
+    .desc-bet #ico svg {
+      font-size: 70px;
       display: block;
       margin: 0 auto;
       position: relative;
@@ -77,9 +77,9 @@
     padding: 10px;
     color: white;
     border-radius: 50%;
-    background-color: #aee219; }
+    background-color: #46bdc1; }
     .desc-bet .addButton:hover {
-      background-color: #cfef72;
+      background-color: #92d8db;
       cursor: pointer; }
       .desc-bet .addButton:hover:after {
         content: "Dodaj ten typ do kuponu";
@@ -96,7 +96,7 @@
         right: 0;
         top: auto; } }
   .desc-bet #user {
-    background-color: #dedede;
+    background-color: rgba(241, 241, 241, 0.7);
     color: black;
     flex: 0.2;
     position: relative; }

@@ -5,6 +5,9 @@
 	width:50%;
 	margin:0 auto;
 	input{
+		color:black;
+		margin:0;padding:5px;
+		font-size:20px;
 		width:100%;
 		border:none;
 		text-align:center;
@@ -48,14 +51,15 @@
 	box-shadow:none;
 }
 .progress-bar-success{
-	background-color:#77F60F;
+	background-color:$green-color;
 }
 .progress-bar-danger{
 	
 }
 
 .green{
-	color:#77F60F;
+	color:$green-color;
+	font-weight:bold;
 }
 .nobets{
 	color:black;

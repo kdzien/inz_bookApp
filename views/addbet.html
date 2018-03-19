@@ -1,37 +1,42 @@
 <div id="choose-panel" class="margin-bottom">
-	<img ng-click="setCurrentChoice('basketball')" ng-class="{basketball: currentChoice=='basketball'}" src="./images/basketball.png"/>	
-	<img ng-click="setCurrentChoice('soccer')" ng-class="{soccer: currentChoice=='soccer'}"  src="./images/soccer.png"/>	
-	<img ng-click="setCurrentChoice('handball')" ng-class="{handball: currentChoice=='handball'}" src="./images/handball.png"/>	
-	<img ng-click="setCurrentChoice('volleyball')" ng-class="{volleyball: currentChoice=='volleyball'}" src="./images/volleyball.png"/>	
+	<span ng-click="setCurrentChoice('basketball')" ng-class="{basketball: currentChoice=='basketball'}"><i class="fas fa-basketball-ball"  ></i>	</span>
+	<span ng-click="setCurrentChoice('soccer')" ng-class="{soccer: currentChoice=='soccer'}" ><i class="fas fa-futbol"   >	</i></span>
+	<span ng-click="setCurrentChoice('handball')" ng-class="{handball: currentChoice=='handball'}" ><i class="far fa-futbol"  ></i>	</span>
+	<span ng-click="setCurrentChoice('volleyball')" ng-class="{volleyball: currentChoice=='volleyball'}" ><i class="fas fa-volleyball-ball">	</i></span>
+	
+	
 </div>
-<div class="col-md-4 col-md-offset-2" id="form-wrapper">
-	<div class="" id="event" ng-click="openselect=!openselect"><div class="form-elem-title">WYDARZENIE<i class="fas fa-angle-down" ></i></div></div>
-	<div class=" event-elements" ng-if="openselect">
-		<div class="events" ng-repeat="a in allE | filter:currentChoice" >
-			<div class="league-name">{{a.league}}</div>
-			<div class="event-name" ng-repeat="event in a.matches" ng-click="setCurrentMatch(event)">{{event.match_name}}</div>
+<div class="col-md-8 col-md-offset-2 addbet">
+	<div id="form-wrapper">
+		<div class="" id="event" ng-click="openselect=!openselect"><div class="form-elem-title">WYDARZENIE<i class="fas fa-angle-down" ></i></div></div>
+		<div class=" event-elements" ng-if="openselect">
+			<div class="events" ng-repeat="a in allE | filter:currentChoice" >
+				<div class="league-name">{{a.league}}</div>
+				<div class="event-name" ng-repeat="event in a.matches" ng-click="setCurrentMatch(event)">{{event.match_name}}</div>
+			</div>
+		</div>
+		<div class="choosedMatch">{{currentMatch}}</div>
+		<div id="type">
+				<div class="form-elem-title">TYP</div>
+			<div id="type-chooser" ng-init="selectedType = '1'">
+				<div ng-class="{'green-background':selectedType === '1'}" ng-click="selectedType = '1'">1</div>
+				<div ng-class="{'green-background':selectedType === 'X'}" ng-click="selectedType = 'X'">X</div>
+				<div ng-class="{'green-background':selectedType === '2'}" ng-click="selectedType = '2'">2</div>
+			</div>
+		</div>
+		<div id="course">
+				<div class="form-elem-title">KURS</div>
+			<input placeholder="" type="number" step="0.01" min="1" ng-model="betCourse" required/>
 		</div>
 	</div>
-	<div class="choosedMatch">{{currentMatch}}</div>
-	<div id="type">
-			<div class="form-elem-title">TYP</div>
-		<div id="type-chooser" ng-init="selectedType = '3'">
-			<div ng-class="{'green-background':selectedType === '1'}" ng-click="selectedType = '1'">1</div>
-			<div ng-class="{'green-background':selectedType === 'X'}" ng-click="selectedType = 'X'">X</div>
-			<div ng-class="{'green-background':selectedType === '2'}" ng-click="selectedType = '2'">2</div>
-		</div>
+	
+	<div class="col-md-6" id="form-panel">
+		<form>
+			<div class="form-elem-title analyse">ANALIZA <i class="fas fa-info-circle"></i></div>
+			<textarea  ng-model="betAnalyse" placeholder="Tu wpisz swoją analize"  ></textarea>
+		</form>
 	</div>
-	<div id="course">
-			<div class="form-elem-title">KURS</div>
-		<input placeholder=""  type="number" step="0.01" min="1" ng-model="betCourse" required/>
-	</div>
+	<button  class="col-md-4  col-xs-12 col-sm-12 postBet" ng-click="postBet()">Dodaj typ</button>
 </div>
 
-<div class="col-md-4" id="form-panel">
-	<form>
-		<div class="form-elem-title analyse">ANALIZA <i class="fas fa-info-circle"></i></div>
-		<textarea  ng-model="betAnalyse" placeholder="Tu wpisz swoją analize" ></textarea>
-	</form>
-</div>
-<button  class="col-md-4 col-md-offset-4 col-xs-12 col-sm-12 postBet" ng-click="postBet()">Dodaj typ</button>
 <div class="col-md-4 col-md-offset-4 warning col-xs-12 col-sm-12">{{errorMessage}}</div> 

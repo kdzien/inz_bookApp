@@ -11,7 +11,7 @@ function($scope,$location,cuponFactory,auth,$timeout){
 		$scope.kupony=cupon;
 	});
 
-	var isListHide=true;
+	$scope.isListHide=true;
 	$scope.isActive = function (viewLocation) {
  		var active = (viewLocation === $location.path());
  		return active;
@@ -19,14 +19,14 @@ function($scope,$location,cuponFactory,auth,$timeout){
 
 	$scope.runPanel = function(event){
 		var kuponElement = document.getElementById("cupon-list")
-		if(isListHide==true){
+		if($scope.isListHide==true){
 			kuponElement.style.animationName="slideLeft ";
 			kuponElement.style.top="0%";
 		}else{
 			kuponElement.style.animationName="slideRight ";
 			kuponElement.style.top="-100%";
 		}
-		isListHide=!isListHide;
+		$scope.isListHide=!$scope.isListHide;
 	}
 	$scope.removeElement = function(item){
 		cuponFactory.removeMecz(item);

@@ -2,11 +2,22 @@
 @import 'mixins.scss';
 
 
+.addbet{
+	display:flex;
+	flex-flow:row wrap;
+	justify-content:flex-end;
+	#form-wrapper,#form-panel,.postBet{
+		width:50%;
+		@media screen and (max-width: 768px) {
+			width:100%;
+		}
+	}
+}
 #choose-panel{
 	text-align:center;
-	img{
+	svg{
 		margin:15px;
-		width:60px;
+		font-size:60px;
 		@media screen and (max-width: 768px) {
 			width:40px;
 		}
@@ -42,20 +53,26 @@
 	background-color:lighten($green-color,10%);
 }
 #form-wrapper{
+	padding:10px;
+	background-color:white;
 	color:black;
 	#event{
 		cursor:pointer;
+		.form-elem-title{
+			border-bottom:2px solid $green-color;
+		}
 	}
 	.choosedMatch{
 		@include custom-font(16px, 400);text-align:center;
 	}
 	.event-elements{
 		position: absolute;
-		width: 100%;
+		width: 90%;
 		background-color: white;
 		z-index: 9;
 		height: 400px;
 		overflow-y: scroll;
+		border-bottom:2px solid $green-color;
 		&::-webkit-scrollbar { 
 			display: none; 
 		}
@@ -66,6 +83,7 @@
 				@include custom-font(18px, 400);
 			}
 			.event-name{
+				padding:0px 10px;
 				@include custom-font(18px, 300);
 				&:hover{
 					cursor:pointer;
@@ -93,7 +111,7 @@
 		input{
 			width:40%;
 			border:none;
-			border-bottom: 1px solid $green-color;
+			border: 1px solid $green-color;
 			@include custom-font(15px,400);text-align:center;
 			padding:10px;
 			&:focus{
@@ -106,6 +124,8 @@
 	display:none;
 }
 #form-panel{
+	padding:10px;
+	background-color:white;
 	color:black !important;
 	form{
 		@include custom-font(20px,400);
@@ -113,13 +133,14 @@
 			width:auto;
 		}
 		textarea{
+			resize: none;
 			margin-top:10px;
 			border: none;
 			@include custom-font(15px,400);
-			width:100%;	
 			color:black;
 			padding:5px;
-			height:100px;
+			width: -webkit-fill-available;
+			height:155px;
 			&:focus{
 				outline:$green-color !important;
 			}
@@ -131,12 +152,15 @@
 }
 .postBet{
 	@include custom-font(30px,400);
+	width:50%;
 	border:none;
-	background-color:white;
-	color:$green-color;
-	margin-top:20px;
+	padding-top:6px;padding-bottom:5.5px;
+	background: linear-gradient(45deg, rgba(70,189,193,1) 0%, rgba(54,123,240,1) 100%);
+	opacity:0.8;
 	&:focus{
 		outline:none;
+	}&:hover{
+		opacity:1;
 	}
 }
 .margin-bottom{
@@ -147,29 +171,29 @@
 .form-control{
 	color:white;
 }
-.basketball{
-	@include sport-icon(#c37e00,50%);
 
+
+.basketball{
+	color:$second-color;
 }
-.soccer{@include sport-icon(#f3f9fd,50%);
+.soccer{
+	color:black;
 }
-.handball{@include sport-icon(#3277FF,50%);
+.handball{
+	color:$blue-color;
 }
-.volleyball{@include sport-icon(#e3f12e,50%);
+.volleyball{
+	color:#e3f12e;
 }
 .basketball-background{
-	@include sport-icon(#c37e00,0%);
+	background-color:$second-color;
 }
-.soccer-background{@include sport-icon(#f3f9fd,0%);
+.soccer-background{
+	background-color:black;
 }
-.handball-background{@include sport-icon(#3277FF,0%);
+.handball-background{
+	background-color:$blue-color;
 }
-.volleyball-background{@include sport-icon(#e3f12e,0%);
-}
-.checkboxed{
-	text-align:center;
-	input,label{
-		width:auto !important;
-		margin:5px
-	}
+.volleyball-background{
+	background-color:#e3f12e;
 }

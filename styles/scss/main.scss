@@ -2,6 +2,10 @@
 @import 'mixins.scss';
 body{
 	color:white;
+	$contrast:0.5;
+	background: linear-gradient(rgba(0,0,0,$contrast),rgba(0,0,0,$contrast)), url("../../images/main-bg.jpg")no-repeat;
+	background-size:cover;
+	font-family: 'Nunito', sans-serif;
 }
 a{
 	text-decoration:none;
@@ -78,7 +82,7 @@ a{
 }
 
 .currentPage{
-	border-bottom:solid 1px $green-color !important;
+	color:$green-color;
 }
 .fixed-margin{
 	float:none;
@@ -127,11 +131,17 @@ a{
 			}
 		}
 	}
-    .cupon-warning{
-    	text-align:center;
-    	display:none;
-    	color:#f9ec25;
-    }
+    
+}
+.cupon-warning{
+	position:absolute;
+	right:0px;
+	top:50;
+	display:none;
+	text-align:center;
+	color:#f9ec25;
+	background-color:rgba(0,0,0,0.5);
+	padding:5px;
 }
 @keyframes slideLeft{
 
@@ -145,7 +155,7 @@ a{
 .warning{
 	@include custom-font(18px,600);
 	text-align:center;
-	color:#ffb414;
+	color:$second-color;
 	padding:10px;
 }
 .warning-center{

@@ -6,8 +6,9 @@
 		<li ui-sref="main.addBet"  ng-class="{currentPage: isActive('/main/addbet')}">DODAJ TYP<i class="far fa-plus-square"></i></li>
 		<li ui-sref="main.ranking" ng-class="{currentPage: isActive('/main/ranking')}">RANKING<i class="fas fa-chart-line"></i></li>
 	</ul>
+	<div class="cupon-warning">Mecz istnieje juz na kuponie</div>	
 	<ul>
-		<li  id="hide-button" ng-click="runPanel($event)"><i class="fas fa-bars"></i></li>
+		<li  id="hide-button" ng-click="runPanel($event)" ng-class="{currentPage : !isListHide}"><i class="fas fa-bars"></i></li>
 		<li  ng-click="logout()"><i class="fas fa-sign-out-alt"></i></li>
 	</ul>
 </div>
@@ -18,7 +19,6 @@
 
 <div id="cupon-list">
 	<div class="cupon-element" ng-click="removeElement(item);" ng-repeat="item in kupony"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;{{item}}</div>
-	<div class="cupon-warning">Mecz istnieje juz na kuponie</div>	
 	<div style="color:rgb(126, 204, 0);text-align:center">{{saveMessage}}</div>
 	<div id="savePanel">
 		<div ng-click="saveC()"><i class="far fa-save" aria-hidden="true"></i></div>

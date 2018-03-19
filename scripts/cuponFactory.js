@@ -39,10 +39,6 @@ function(auth,$http,$timeout){
 		},function(response){
 			console.log(response)
 		})
-		// $http.post("/cupon/"+auth.currentUser()._id,kupon).success(function(data) {
-		// 	console.log(kupon)
-		// 	callback("gitara")
-		// });
 	}
 
 	var removeCupon = function(callback){

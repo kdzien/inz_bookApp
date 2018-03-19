@@ -2,6 +2,10 @@
   width: 50%;
   margin: 0 auto; }
   .user-search input {
+    color: black;
+    margin: 0;
+    padding: 5px;
+    font-size: 20px;
     width: 100%;
     border: none;
     text-align: center; }
@@ -28,11 +32,11 @@
     .rank {
       width: auto; } }
   .rank:nth-child(2) {
-    background-color: #fff35f; }
+    background-color: #efbe37; }
   .rank:nth-child(3) {
-    background-color: #fffabb; }
+    background-color: #f6da8c; }
   .rank:nth-child(4) {
-    background-color: #fffeee; }
+    background-color: #fae9bb; }
 
 .progress {
   margin-bottom: 0;
@@ -41,10 +45,11 @@
   box-shadow: none; }
 
 .progress-bar-success {
-  background-color: #77F60F; }
+  background-color: #46bdc1; }
 
 .green {
-  color: #77F60F; }
+  color: #46bdc1;
+  font-weight: bold; }
 
 .nobets {
   color: black;

@@ -1,15 +1,25 @@
 @charset "UTF-8";
+.addbet {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end; }
+  .addbet #form-wrapper, .addbet #form-panel, .addbet .postBet {
+    width: 50%; }
+    @media screen and (max-width: 768px) {
+      .addbet #form-wrapper, .addbet #form-panel, .addbet .postBet {
+        width: 100%; } }
+
 #choose-panel {
   text-align: center; }
-  #choose-panel img {
+  #choose-panel svg {
     margin: 15px;
-    width: 60px; }
+    font-size: 60px; }
     @media screen and (max-width: 768px) {
-      #choose-panel img {
+      #choose-panel svg {
         width: 40px; } }
-    #choose-panel img:hover {
+    #choose-panel svg:hover {
       cursor: pointer; }
-    #choose-panel img:last-child {
+    #choose-panel svg:last-child {
       margin-right: 0px; }
 
 .form-elem-title {
@@ -35,12 +45,16 @@
     width: max-content; }
 
 .green-background {
-  background-color: #bfea44; }
+  background-color: #6ccbce; }
 
 #form-wrapper {
+  padding: 10px;
+  background-color: white;
   color: black; }
   #form-wrapper #event {
     cursor: pointer; }
+    #form-wrapper #event .form-elem-title {
+      border-bottom: 2px solid #46bdc1; }
   #form-wrapper .choosedMatch {
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
@@ -48,11 +62,12 @@
     text-align: center; }
   #form-wrapper .event-elements {
     position: absolute;
-    width: 100%;
+    width: 90%;
     background-color: white;
     z-index: 9;
     height: 400px;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    border-bottom: 2px solid #46bdc1; }
     #form-wrapper .event-elements::-webkit-scrollbar {
       display: none; }
     #form-wrapper .event-elements .events {
@@ -63,12 +78,13 @@
         font-size: 18px;
         font-weight: 400; }
       #form-wrapper .event-elements .events .event-name {
+        padding: 0px 10px;
         font-family: 'Nunito', sans-serif;
         font-size: 18px;
         font-weight: 300; }
         #form-wrapper .event-elements .events .event-name:hover {
           cursor: pointer;
-          background-color: #bfea44; }
+          background-color: #6ccbce; }
   #form-wrapper #type #type-chooser {
     text-align: center;
     display: flex; }
@@ -77,11 +93,11 @@
       padding: 30px 0px; }
       #form-wrapper #type #type-chooser div:hover {
         cursor: pointer;
-        background-color: #bfea44; }
+        background-color: #6ccbce; }
   #form-wrapper #course input {
     width: 40%;
     border: none;
-    border-bottom: 1px solid #aee219;
+    border: 1px solid #46bdc1;
     font-family: 'Nunito', sans-serif;
     font-size: 15px;
     font-weight: 400;
@@ -94,6 +110,8 @@
   display: none; }
 
 #form-panel {
+  padding: 10px;
+  background-color: white;
   color: black !important; }
   #form-panel form {
     font-family: 'Nunito', sans-serif;
@@ -103,17 +121,18 @@
       #form-panel form {
         width: auto; } }
     #form-panel form textarea {
+      resize: none;
       margin-top: 10px;
       border: none;
       font-family: 'Nunito', sans-serif;
       font-size: 15px;
       font-weight: 400;
-      width: 100%;
       color: black;
       padding: 5px;
-      height: 100px; }
+      width: -webkit-fill-available;
+      height: 155px; }
       #form-panel form textarea:focus {
-        outline: #aee219 !important; }
+        outline: #46bdc1 !important; }
     #form-panel form > * {
       margin-bottom: 10px; }
 
@@ -121,12 +140,16 @@
   font-family: 'Nunito', sans-serif;
   font-size: 30px;
   font-weight: 400;
+  width: 50%;
   border: none;
-  background-color: white;
-  color: #aee219;
-  margin-top: 20px; }
+  padding-top: 6px;
+  padding-bottom: 5.5px;
+  background: linear-gradient(45deg, #46bdc1 0%, #367bf0 100%);
+  opacity: 0.8; }
   .postBet:focus {
     outline: none; }
+  .postBet:hover {
+    opacity: 1; }
 
 .margin-bottom {
   margin-bottom: 20px; }
@@ -135,41 +158,27 @@
   color: white; }
 
 .basketball {
-  background-color: #c37e00;
-  border-radius: 50%; }
+  color: #eebb2e; }
 
 .soccer {
-  background-color: #f3f9fd;
-  border-radius: 50%; }
+  color: black; }
 
 .handball {
-  background-color: #3277FF;
-  border-radius: 50%; }
+  color: #367bf0; }
 
 .volleyball {
-  background-color: #e3f12e;
-  border-radius: 50%; }
+  color: #e3f12e; }
 
 .basketball-background {
-  background-color: #c37e00;
-  border-radius: 0%; }
+  background-color: #eebb2e; }
 
 .soccer-background {
-  background-color: #f3f9fd;
-  border-radius: 0%; }
+  background-color: black; }
 
 .handball-background {
-  background-color: #3277FF;
-  border-radius: 0%; }
+  background-color: #367bf0; }
 
 .volleyball-background {
-  background-color: #e3f12e;
-  border-radius: 0%; }
-
-.checkboxed {
-  text-align: center; }
-  .checkboxed input, .checkboxed label {
-    width: auto !important;
-    margin: 5px; }
+  background-color: #e3f12e; }
 
 /*# sourceMappingURL=maps/addbet.css.map */

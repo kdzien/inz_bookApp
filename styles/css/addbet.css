@@ -48,43 +48,46 @@
   background-color: #6ccbce; }
 
 #form-wrapper {
+  position: relative;
   padding: 10px;
   background-color: white;
   color: black; }
+  #form-wrapper .form-elem-title {
+    margin-bottom: 0; }
   #form-wrapper #event {
     cursor: pointer; }
     #form-wrapper #event .form-elem-title {
       border-bottom: 2px solid #46bdc1; }
   #form-wrapper .choosedMatch {
+    margin: 5px 0px;
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
     font-weight: 400;
     text-align: center; }
   #form-wrapper .event-elements {
+    background-color: rgba(255, 255, 255, 0.8);
     position: absolute;
-    width: 90%;
-    background-color: white;
+    left: 0;
+    width: 100%;
     z-index: 9;
     height: 400px;
     overflow-y: scroll;
     border-bottom: 2px solid #46bdc1; }
     #form-wrapper .event-elements::-webkit-scrollbar {
       display: none; }
-    #form-wrapper .event-elements .events {
-      width: 90%; }
-      #form-wrapper .event-elements .events .league-name {
-        text-align: center;
-        font-family: 'Nunito', sans-serif;
-        font-size: 18px;
-        font-weight: 400; }
-      #form-wrapper .event-elements .events .event-name {
-        padding: 0px 10px;
-        font-family: 'Nunito', sans-serif;
-        font-size: 18px;
-        font-weight: 300; }
-        #form-wrapper .event-elements .events .event-name:hover {
-          cursor: pointer;
-          background-color: #6ccbce; }
+    #form-wrapper .event-elements .events .league-name {
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+      font-size: 18px;
+      font-weight: 400; }
+    #form-wrapper .event-elements .events .event-name {
+      padding: 0px 10px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      font-weight: 300; }
+      #form-wrapper .event-elements .events .event-name:hover {
+        cursor: pointer;
+        background-color: #6ccbce; }
   #form-wrapper #type #type-chooser {
     text-align: center;
     display: flex; }

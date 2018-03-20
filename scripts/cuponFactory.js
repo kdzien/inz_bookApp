@@ -12,10 +12,12 @@ function(auth,$http,$timeout){
 			callback(kupon)
 		})
 	}
-	var addMecz = function(mecz){
+	var addMecz = function(obj){
+		var mecz=obj.nazwa;
+		var mecz_obj = {nazwa:obj.nazwa,typ:obj.typ}
 		var exist = checkMecz(mecz);
 		if(exist==true){
-			kupon.push(mecz);	
+			kupon.push(mecz_obj);	
 			return 0;
 		}
 		return 1;
@@ -25,19 +27,22 @@ function(auth,$http,$timeout){
 		kupon.splice(index,1);
 	}
 	var checkMecz = function(mecz){
-		var index = kupon.indexOf(mecz)
-		if(index==-1){
+		var isOnCupon = false;
+		kupon.forEach(elem=>{
+			if(elem.nazwa===mecz){
+				isOnCupon=true;
+			}
+		})
+		if(!isOnCupon){
 			return true;
 		}
 		return false;
 	}
 
 	var saveCupon = function(callback){
-		console.log(auth.currentUser())
 		$http.post("/cupon/"+auth.currentUser()._id,kupon).then(function(response){
 			callback(response)		
 		},function(response){
-			console.log(response)
 		})
 	}
 

@@ -4,8 +4,12 @@
 .user-search{
 	width:50%;
 	margin:0 auto;
+	@media screen and (max-width: 720px) {
+		width:100%;
+	}
 	input{
-		color:black;
+		background-color:rgba(0,0,0,0.5);
+		color:white;
 		margin:0;padding:5px;
 		font-size:20px;
 		width:100%;
@@ -32,13 +36,14 @@
 	}
 	margin:0 auto;
 	text-align:center;
-	color:black;
-	background-color:lighten($foreground-color,20%);
+	color:white;
+	background-color:rgba(0,0,0,0.5);
 	padding:10px 0px;
 	$curr-prec:2;
 	@for $i from $curr-prec through 4 {
 		&:nth-child(#{$i}){
-			background-color:lighten($second-color,$curr-prec);
+			color:lighten($second-color,$curr-prec);
+			font-weight:600;
 			$curr-prec:$i*10;
 		}
 	}

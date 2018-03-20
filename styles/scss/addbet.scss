@@ -53,9 +53,13 @@
 	background-color:lighten($green-color,10%);
 }
 #form-wrapper{
+	position:relative;
 	padding:10px;
 	background-color:white;
 	color:black;
+	.form-elem-title{
+		margin-bottom:0;
+	}
 	#event{
 		cursor:pointer;
 		.form-elem-title{
@@ -63,12 +67,14 @@
 		}
 	}
 	.choosedMatch{
+		margin:5px 0px;
 		@include custom-font(16px, 400);text-align:center;
 	}
 	.event-elements{
+		background-color:rgba(255,255,255,0.8);
 		position: absolute;
-		width: 90%;
-		background-color: white;
+		left:0;
+		width: 100%;
 		z-index: 9;
 		height: 400px;
 		overflow-y: scroll;
@@ -77,14 +83,13 @@
 			display: none; 
 		}
 		.events{
-			width:90%;
 			.league-name{
 				text-align:center;
 				@include custom-font(18px, 400);
 			}
 			.event-name{
 				padding:0px 10px;
-				@include custom-font(18px, 300);
+				@include custom-font(16px, 300);
 				&:hover{
 					cursor:pointer;
 					background-color:lighten($green-color,10%)

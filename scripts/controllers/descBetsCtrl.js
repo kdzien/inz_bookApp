@@ -7,18 +7,21 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 	getData();
 
 	$scope.addItem = function(obj){
+		var warning = document.querySelector('.cupon-warning');
 		if(cuponFactory.addMecz(obj)==1){
-			var warning = document.querySelector('.cupon-warning');
-			warning.style.display="block";
-			$timeout(function(){
-				warning.style.display="none";
-			},1500)
+			warning.innerHTML="Mecz jest już na kuponie"
+		}else{
+			warning.innerHTML="Dodano typ do kuponu"
 		};
+
+		warning.style.display="block";
+		$timeout(function(){
+			warning.style.display="none";
+		},1500)
 	}
 	function getData(){
 		$http.get("/bets/desc").success(function(data) {
 			$scope.bets = data;
-			console.log(data)
 		});	
 	}
 	$scope.iksde = function(obj){

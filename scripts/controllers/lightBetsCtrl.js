@@ -13,7 +13,6 @@ function($scope,$location,$http,cuponFactory,$timeout,auth){
 	}
 	getData();
 	$scope.addItem = function(obj){
-
 		var warning = document.querySelector('.cupon-warning');
 		if(cuponFactory.addMecz(obj)==1){
 			warning.innerHTML="Mecz jest już na kuponie"

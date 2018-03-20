@@ -18,7 +18,7 @@
 </div>
 
 <div id="cupon-list">
-	<div class="cupon-element" ng-click="removeElement(item);" ng-repeat="item in kupony"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;{{item}}</div>
+	<div class="cupon-element" ng-click="removeElement(item);" ng-repeat="item in kupony"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;{{item.nazwa}}<span>{{item.typ}}</span></div>
 	<div style="color:rgb(126, 204, 0);text-align:center">{{saveMessage}}</div>
 	<div id="savePanel">
 		<div ng-click="saveC()"><i class="far fa-save" aria-hidden="true"></i></div>

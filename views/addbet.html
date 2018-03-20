@@ -20,7 +20,7 @@
 				<div class="form-elem-title">TYP</div>
 			<div id="type-chooser" ng-init="selectedType = '1'">
 				<div ng-class="{'green-background':selectedType === '1'}" ng-click="selectedType = '1'">1</div>
-				<div ng-class="{'green-background':selectedType === 'X'}" ng-click="selectedType = 'X'">X</div>
+				<div ng-if="currentChoice=='soccer' || currentChoice== 'handball' " ng-class="{'green-background':selectedType === 'X'}" ng-click="selectedType = 'X'">X</div>
 				<div ng-class="{'green-background':selectedType === '2'}" ng-click="selectedType = '2'">2</div>
 			</div>
 		</div>

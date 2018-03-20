@@ -8,6 +8,7 @@ function($scope,$location,cuponFactory,auth,$timeout){
 	
 
 	cuponFactory.getKupon(function(cupon){
+		console.log(cupon)
 		$scope.kupony=cupon;
 	});
 

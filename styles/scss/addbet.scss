@@ -15,6 +15,10 @@
 }
 #choose-panel{
 	text-align:center;
+	span{
+		
+		color:rgba(0,0,0,0.6);
+	}
 	svg{
 		margin:15px;
 		font-size:60px;
@@ -179,16 +183,16 @@
 
 
 .basketball{
-	color:$second-color;
+	color:$second-color !important;
 }
 .soccer{
-	color:black;
+	color:black!important;
 }
 .handball{
-	color:$blue-color;
+	color:$blue-color!important;
 }
 .volleyball{
-	color:#e3f12e;
+	color:#e3f12e!important;
 }
 .basketball-background{
 	background-color:$second-color;

@@ -28,7 +28,7 @@
 		font-size:36px;
 	}
 }
-#register,#login{
+#register,.app-modal{
 	font-family: 'Maven Pro', sans-serif;
 	#form-panel{
 		background-color:transparent;
@@ -72,8 +72,6 @@
 #register{
 	
     top: 303px;
-}
-#login{
 }
 #rules{
 	background-color:white;
@@ -179,7 +177,7 @@
 		margin-left:25%;
 	}
 }
-#login{
+.app-modal{
 	@media screen and (max-width: 720px) {
 		top:0 !important;
 	}

@@ -2,9 +2,13 @@ angular.module('betApp').controller('mainCtrl', [
 '$scope','$location','cuponFactory','auth','$timeout',
 
 function($scope,$location,cuponFactory,auth,$timeout){
-
+	angular.element(document).ready(function () {
+        document.body.className += ' ' + 'main-background';
+    });
+	
 	$scope.currentUser=auth.currentUser().name;
 	$scope.saveMessage= ""
+	
 	
 
 	cuponFactory.getKupon(function(cupon){

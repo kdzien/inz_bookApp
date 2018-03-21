@@ -84,7 +84,7 @@
 			background-color:lighten($green-color,20%);
 			cursor:pointer;
 			&:after{
-				@include message("Dodaj ten typ do kuponu")
+				@include message("Dodaj ten typ do kuponu");
 			}
 		}
 		right:-28;

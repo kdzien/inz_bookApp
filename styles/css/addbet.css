@@ -11,6 +11,8 @@
 
 #choose-panel {
   text-align: center; }
+  #choose-panel span {
+    color: rgba(0, 0, 0, 0.6); }
   #choose-panel svg {
     margin: 15px;
     font-size: 60px; }
@@ -39,6 +41,7 @@
     color: White;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 5px;
+    right: 0;
     position: absolute;
     bottom: -15;
     display: block;
@@ -161,16 +164,16 @@
   color: white; }
 
 .basketball {
-  color: #eebb2e; }
+  color: #eebb2e !important; }
 
 .soccer {
-  color: black; }
+  color: black !important; }
 
 .handball {
-  color: #367bf0; }
+  color: #367bf0 !important; }
 
 .volleyball {
-  color: #e3f12e; }
+  color: #e3f12e !important; }
 
 .basketball-background {
   background-color: #eebb2e; }

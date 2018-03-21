@@ -2,10 +2,13 @@
 @import 'mixins.scss';
 body{
 	color:white;
-	$contrast:0.5;
-	background: linear-gradient(rgba(0,0,0,$contrast),rgba(0,0,0,$contrast)), url("../../images/main-bg.jpg")no-repeat;
+
 	background-size:cover;
 	font-family: 'Nunito', sans-serif;
+}
+.main-background{
+	$contrast:0.5;
+	background: linear-gradient(rgba(0,0,0,$contrast),rgba(0,0,0,$contrast)), url("../../images/main-bg.jpg")no-repeat;
 }
 a{
 	text-decoration:none;

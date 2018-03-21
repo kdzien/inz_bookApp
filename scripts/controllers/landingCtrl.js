@@ -7,7 +7,6 @@ function($scope,$location,$http,auth,$state,$timeout){
   $scope.loginModal=false;
 
   $scope.showLoginModal = function(){
-    console.log("clicked")
     $scope.loginModal=!$scope.loginModal;
   }
   $scope.register = function(callback){
